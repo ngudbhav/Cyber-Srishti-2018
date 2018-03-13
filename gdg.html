@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+    <!-- Metro 4 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <!-- <div class="preloader container-fluid" style="background-color: black;padding: 0;height: 100%;">
+      <div class="row">
+        <div class="col-sm-12">
+          <center>
+            <img src="logo1.png">
+          </center>
+        </div>
+      </div>
+    	<br>
+      <div class="row">
+        <div class="col-sm-12">
+          <div data-role="progress" data-type="load" data-value="35" data-buffer="75"></div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-sm-12">
+          <center>
+            <div data-role="activity" data-type="ring" data-style="color"></div>
+          </center>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <center>
+            <h6 style="color: white;">
+              Loading System!
+            </h6>
+          </center>
+        </div>
+      </div>
+    </div> -->
+<div class="container-fluid" style="padding: 0;">
+  <div class="row">
+    <div class="col-sm-12">
+      <img src="/images/wall.jpg" id="wallpaper" style="display: none;">
+      <div class="row" id="window-area">
+        <div class="dialog" id="about" data-role="dialog">
+          <div class="dialog-title">About US</div>
+          <div class="dialog-content">
+            With the motto of stimulating technology, scientific tinking and innovation, Jaypee Institute of Information Technology presents the 3rd edition of its annual technical festival- CYBER SRISHTI. Hence, with an overwhelming student participation and a reach of over 250 colleges, Cyber Srishti has become one of the most established technical festival organised among Delhi-NCR colleges. Cyber Srishti thus endeavours to provide youth with a platform to showcase their talents and skills in cut-throat competitions, displaying pioneering technology and research from all over the country and to interact with renowned personalities.
+          </div>
+          <div class="dialog-actions">
+            <button class="button primary" onclick="Metro.dialog.close('#about')">OK</button>
+          </div>
+        </div>
+      </div>
+      <div class="row" id="events" style="opacity: 0;background-color: rebeccapurple;">
+        <div class="col-sm-12">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="card">
+                  <div class="card-header">
+                    Automated Robotics Challenge
+                  </div>
+                  <div class="card-content p-2">
+                    Theme: <br>A blend of Manual Autonomous Robotics Challenge
+                  </div>
+                  <div class="card-footer">
+                    <button class="button success default rounded">mini</button>
+                    <button class="button success default rounded">mini</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="card">
+                  <div class="card-header">
+                    Code Of Codons
+                  </div>
+                  <div class="card-content p-2">
+                    Theme: Scientific Aptitute Quiz And Bio-Informatics Based Coding Challenge
+                  </div>
+                  <div class="card-footer">
+                    <button class="button success default rounded">mini</button>
+                    <button class="button success default rounded">mini</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="card">
+                  <div class="card-header">
+                    Circuit Mania
+                  </div>
+                  <div class="card-content p-2">
+                    Theme: Custom Design Of Electronic Circuits For Various Applications
+                  </div>
+                  <div class="card-footer">
+                    <button class="button success default rounded">mini</button>
+                    <button class="button success default rounded">mini</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="card">
+                  <div class="card-header">
+                    Circuit Mania
+                  </div>
+                  <div class="card-content p-2">
+                    Theme: Custom Design Of Electronic Circuits For Various Applications
+                  </div>
+                  <div class="card-footer">
+                    <button class="button success default rounded">mini</button>
+                    <button class="button success default rounded">mini</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="card">
+                  <div class="card-header">
+                    Circuit Mania
+                  </div>
+                  <div class="card-content p-2">
+                    Theme: Custom Design Of Electronic Circuits For Various Applications
+                  </div>
+                  <div class="card-footer">
+                    <button class="button success default rounded">mini</button>
+                    <button class="button success default rounded">mini</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="card">
+                  <div class="card-header">
+                    Circuit Mania
+                  </div>
+                  <div class="card-content p-2">
+                    Theme: Custom Design Of Electronic Circuits For Various Applications
+                  </div>
+                  <div class="card-footer">
+                    <button class="button success default rounded">mini</button>
+                    <button class="button success default rounded">mini</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="card">
+                  <div class="card-header">
+                    Circuit Mania
+                  </div>
+                  <div class="card-content p-2">
+                    Theme: Custom Design Of Electronic Circuits For Various Applications
+                  </div>
+                  <div class="card-footer">
+                    <button class="button success default rounded">mini</button>
+                    <button class="button success default rounded">mini</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="card">
+                  <div class="card-header">
+                    Circuit Mania
+                  </div>
+                  <div class="card-content p-2">
+                    Theme: Custom Design Of Electronic Circuits For Various Applications
+                  </div>
+                  <div class="card-footer">
+                    <button class="button success default rounded">mini</button>
+                    <button class="button success default rounded">mini</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="card">
+                  <div class="card-header">
+                    Circuit Mania
+                  </div>
+                  <div class="card-content p-2">
+                    Theme: Custom Design Of Electronic Circuits For Various Applications
+                  </div>
+                  <div class="card-footer">
+                    <button class="button success default rounded">mini</button>
+                    <button class="button success default rounded">mini</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="card">
+                  <div class="card-header">
+                    Circuit Mania
+                  </div>
+                  <div class="card-content p-2">
+                    Theme: Custom Design Of Electronic Circuits For Various Applications
+                  </div>
+                  <div class="card-footer">
+                    <button class="button success default rounded">mini</button>
+                    <button class="button success default rounded">mini</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="card">
+                  <div class="card-header">
+                    Circuit Mania
+                  </div>
+                  <div class="card-content p-2">
+                    Theme: Custom Design Of Electronic Circuits For Various Applications
+                  </div>
+                  <div class="card-footer">
+                    <button class="button success default rounded">mini</button>
+                    <button class="button success default rounded">mini</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="card">
+                  <div class="card-header">
+                    Circuit Mania
+                  </div>
+                  <div class="card-content p-2">
+                    Theme: Custom Design Of Electronic Circuits For Various Applications
+                  </div>
+                  <div class="card-footer">
+                    <button class="button success default rounded">mini</button>
+                    <button class="button success default rounded">mini</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+	<!-- <div style="z-index: 2;position: absolute;left:40%;top:20%;color:white;display: none;" id="window">
+		
+	
+		<div data-role="window" data-icon="<span class='mif-rocket'></span>" class="p-2" data-role="draggable" class="window" data-btn-min="false"
+     data-btn-max="false" style="">
+    		<select data-role="select">
+    			<option class="fg-cyan">JIIT-62</option>
+    			<option class="text-bold fg-red">JIIT-128</option>
+			</select>
+			<br>
+			<input type="text" class="alert" placeholder="Team-Name"><br>
+			<input type="text" class="success" placeholder="Full-Name"><br>
+			<input type="text" class="dark" placeholder="Example-Field"><br>
+			<input type="text" class="yellow" placeholder="Example-Field"><br>
+			<button class="button success"><span class="mif-checkmark"></span>Submit</button>
+			<br>
+
+		</div>
+	</div> -->
+	<div data-role="charms" data-position="left" id="el" class="charms" style="padding-right: 1%;padding-top: 1%;">
+    	<ul class="large">
+      		<div data-role="tile" data-size="wide" id="about-us" onclick="Metro.dialog.open('#about');$('#events').hide();" style="background-color: #509601;">
+    			<span>&nbsp;About us</span>
+      			<span class="icon"><i class="fas fa-users"></i></span>
+      		</div><br>
+      		<div data-role="tile" data-size="wide">
+    			<span>&nbsp;Events</span>
+      			<span class="icon"><i class="far fa-calendar"></i></span>
+      		</div><br>
+      		<div data-role="tile" data-size="wide" style="background-color: #F37735;">
+    			<span>&nbsp;Gallery</span>
+      			<span class="icon"><i class="fas fa-images"></i></span>
+      		</div><br>
+      		<div data-role="tile" data-size="wide" style="background-color: #00AEDB;">
+    			<span>&nbsp;Team</span>
+      			<span class="icon"><i class="fas fa-envelope-open"></i></span>
+      		</div><br>
+      		<div data-role="tile" data-size="wide">
+    			<span>&nbsp;Contact</span>
+      			<span class="icon mif-mail"></span>
+      		</div>
+    	</ul>
+	</div>
+	<div data-role="charms" data-position="bottom" id="start" class="charms">
+		<span>
+			<button class="button primary" id="startmenu"><span class="icon mif-apps"></span> Start</button>
+		</span>
+		<button class="button primary small" id="Example">Window</button>
+	</div>
+</div>
+    <!-- jQuery first, then Metro UI JS -->
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+   	<script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        var charms = $("#start").data('charms');
+          charms.open();
+            $(".large>div").bind('click', function(){
+              var charms = $("#el").data('charms');
+              charms.toggle();
+              $(this).addClass('jumpwin8');
+                setTimeout(function(){
+                $("#events").addClass('events');
+                $(".large>div").removeClass('jumpwin8');
+              }, 900);
+            });
+      	/*setTimeout(function(){
+      		$(".preloader").css({
+      			transform: 'rotateY(90deg)',
+      			opacity : 0,
+      			transition : 'transform 1s ease-in-out, opacity 1s'
+      		});
+      		$("#main").css('opacity', '0');
+      	}, 3000);
+      	setTimeout(function(){
+      		$(".preloader").css('display', 'none');
+      		$("#main-screen").css({
+      			opacity: 1,
+      			transition : 'opacity 1s'
+      		})
+      	}, 4500);*/
+      	/*setTimeout(function(){
+      		var height = $(document).height();
+      		$("#wallpaper").css('height', height);
+      		*/
+      	/*}, 5500);*/
+      });
+      $("#startmenu").click(function(){
+        var charms = $("#el").data('charms');
+       	charms.toggle();
+     });
+      /*$(".large>div").click(function(){
+          var charms = $("#el").data('charms');
+          //charms.close();
+      });*/
+      var count = 0;
+      $("#Example").click(function(){
+      	min();
+      });
+      function min(){
+      	if(count === 0){
+      		$(".window").hide('slow');
+      		count++;
+      	}
+      	else{
+      		$(".window").show('slow');
+      		count = 0;
+      	}
+      }
+      $('.btn-close').click(function(event) {
+      	$("#Example").hide();
+      });
+      $("#about-us, #about-us > span > *").click(function(){
+        $("#wallpaper").addClass('fadeOutBack');
+        setTimeout(function(){$("#wallpaper").css('display', 'none');}, 300)
+        $(".loader").addClass('loading');
+        /*$("#wallpaper").css({
+          transform: 'translateZ(-3em) scale(0.6)',
+          opacity : 0,
+          transition: 'transform 0.5s ease-in-out, opacity 0.5s ease-in-out'
+        });
+        setTimeout(function(){$("#wallpaper").css('display', 'none');}, 500);
+        setTimeout(function(){
+          $(".loader").css({
+          transform: 'translateX(0)',
+          opacity: 1,
+          transition: 'transform 0.5s ease-in-out, opacity 0.5s ease-in-out' 
+          });
+        }, 550);
+        setTimeout(function(){
+          $(".loader").css({
+          transform: 'translateX(-300px)',
+          opacity: 0,
+          transition: 'transform 0.5s ease-in-out, opacity 0.5s ease-in-out' 
+          });
+        }, 1000);
+        setTimeout(function(){
+          $(".loader").css('display', 'none');
+        }, 1500)
+        setTimeout(function(){
+          $(".main-screen").css({
+            transform : 'translateX(0px) rotateY(0deg)',
+            opacity: 1,
+            transition: 'transform 0.5s ease-in-out, opacity 0.5 ease-in-out' 
+          });
+        }, 1500);*/
+      });
+    </script>
+  </body>
+</html>
