@@ -55,11 +55,22 @@ html, body{
   0%{opacity: 1;}
   100%{opacity: 0;}
 }
-.events{
+.open-page{
   animation: eventopen 1s cubic-bezier(.66,.04,.36,1.03) 1 normal forwards;
 }
 @keyframes eventopen{
-  0%{transform:rotateY(-90deg) translateZ(5em);opacity:0}
-  30%{opacity:1}
-  100%{transform: rotateY(0deg) translateZ(0) ; opacity:1}
+  0%{transform:rotateY(100deg) translate(10em);opacity:0}
+  50%{opacity:1}
+  100%{transform:rotateY(0deg) translate(0em); opacity:1}
+}
+figcaption{
+  opacity: 0;
+  width: inherit;
+}
+.figcaption{
+  animation: figcaption 0.3s ease-in 1 normal forwards;
+}
+@keyframes figcaption{
+  0%{transform: translateY(0em); color: black; background-color: ;opacity: 0;}
+  100%{transform: translateY(-4em); color: white; background-color: black;opacity: 1;}
 }

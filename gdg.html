@@ -7,6 +7,7 @@
     <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
     <!-- Metro 4 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href='http://fonts.googleapis.com/css?family=Unkempt' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
@@ -43,12 +44,12 @@
         </div>
       </div>
     </div> -->
-<div class="container-fluid" style="padding: 0;">
+<div class="container-fluid h-100" style="padding: 0;">
   <div class="row">
     <div class="col-sm-12">
       <img src="/images/wall.jpg" id="wallpaper" style="display: none;">
       <div class="row" id="window-area">
-        <div class="dialog" id="about" data-role="dialog">
+        <!-- <div class="dialog" id="about" data-role="dialog">
           <div class="dialog-title">About US</div>
           <div class="dialog-content">
             With the motto of stimulating technology, scientific tinking and innovation, Jaypee Institute of Information Technology presents the 3rd edition of its annual technical festival- CYBER SRISHTI. Hence, with an overwhelming student participation and a reach of over 250 colleges, Cyber Srishti has become one of the most established technical festival organised among Delhi-NCR colleges. Cyber Srishti thus endeavours to provide youth with a platform to showcase their talents and skills in cut-throat competitions, displaying pioneering technology and research from all over the country and to interact with renowned personalities.
@@ -56,9 +57,29 @@
           <div class="dialog-actions">
             <button class="button primary" onclick="Metro.dialog.close('#about')">OK</button>
           </div>
-        </div>
+        </div> -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">About US</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-      <div class="row" id="events" style="opacity: 0;background-color: rebeccapurple;">
+      <div class="modal-body">
+       With the motto of stimulating technology, scientific tinking and innovation, Jaypee Institute of Information Technology presents the 3rd edition of its annual technical festival- CYBER SRISHTI. Hence, with an overwhelming student participation and a reach of over 250 colleges, Cyber Srishti has become one of the most established technical festival organised among Delhi-NCR colleges. Cyber Srishti thus endeavours to provide youth with a platform to showcase their talents and skills in cut-throat competitions, displaying pioneering technology and research from all over the country and to interact with renowned personalities.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+      <div class="row" id="events" style="opacity: 0;display: none;">
         <div class="col-sm-12">
             <div class="row">
               <div class="col-sm-4">
@@ -238,8 +259,36 @@
             </div>
         </div>
       </div>
+            <div id="team" style="display: block;" class="h-100">
+              <center>
+              <div style="background-color: black;" class="h-100">
+                <figure class="figure">
+                    <img src="images/test.jpg" class="figure-img rounded img-fluid" alt="A generic square placeholder image with rounded corners in a figure.">
+                    <figcaption class="figure-caption"><h5>A caption for the above image.</h5></figcaption>
+                  </figure>
+                <figure class="figure">
+                    <img src="images/test.jpg" class="figure-img rounded img-fluid" alt="A generic square placeholder image with rounded corners in a figure.">
+                    <figcaption class="figure-caption"><h5>A caption for the above image.</h5></figcaption>
+                </figure>
+                <figure class="figure" style="display: none;">
+                    <img src="images/test1.jpg" class="figure-img rounded img-fluid" alt="A generic square placeholder image with rounded corners in a figure.">
+                    <figcaption class="figure-caption"><h5>A caption for the above image.</h5></figcaption>
+                  </figure>
+                <figure class="figure" style="display: none;">
+                    <img src="images/test1.jpg" class="figure-img rounded img-fluid" alt="A generic square placeholder image with rounded corners in a figure.">
+                    <figcaption class="figure-caption"><h5>A caption for the above image.</h5></figcaption>
+                </figure>
+              </div>
+              </center>
+              <h1>Scroll Please!</h1>
+            </div>
+        
+      <!-- </div>
+      <div>
+        
+      </div>
     </div>
-  </div>
+  </div> -->
 	<!-- <div style="z-index: 2;position: absolute;left:40%;top:20%;color:white;display: none;" id="window">
 		
 	
@@ -261,15 +310,15 @@
 	</div> -->
 	<div data-role="charms" data-position="left" id="el" class="charms" style="padding-right: 1%;padding-top: 1%;">
     	<ul class="large">
-      		<div data-role="tile" data-size="wide" id="about-us" onclick="Metro.dialog.open('#about');$('#events').hide();" style="background-color: #509601;">
+      		<div data-role="tile" data-size="wide" id="about-us" onclick="$('#exampleModalCenter').modal('show')" style="background-color: #509601;">
     			<span>&nbsp;About us</span>
       			<span class="icon"><i class="fas fa-users"></i></span>
       		</div><br>
-      		<div data-role="tile" data-size="wide">
+      		<div data-role="tile" data-size="wide" id="event-tile">
     			<span>&nbsp;Events</span>
       			<span class="icon"><i class="far fa-calendar"></i></span>
       		</div><br>
-      		<div data-role="tile" data-size="wide" style="background-color: #F37735;">
+      		<div data-role="tile" data-size="wide" id="team-tile" style="background-color: #F37735;">
     			<span>&nbsp;Gallery</span>
       			<span class="icon"><i class="fas fa-images"></i></span>
       		</div><br>
@@ -304,12 +353,38 @@
             $(".large>div").bind('click', function(){
               var charms = $("#el").data('charms');
               charms.toggle();
+              //$("#gallery").css('display', 'none');
+              if($(this).attr('id') !== 'about-us'){
               $(this).addClass('jumpwin8');
+            }
+              var element = $(this);
+
                 setTimeout(function(){
-                $("#events").addClass('events');
-                $(".large>div").removeClass('jumpwin8');
+                  if(element.attr('id') === 'event-tile'){
+                    $("#team").css('display', 'none');
+                    $("#events").css('display', 'block');
+                    $("#events").addClass('open-page');
+                  }
+                  else if(element.attr('id') === 'team-tile'){
+                    $("body").css('overflow', 'hidden');
+                    $("#events").css('display', 'none');
+                    $("#team").css('display', 'block');
+                    $("#team").addClass('open-page');
+                  }
+                    $(".large>div").removeClass('jumpwin8');
               }, 900);
             });
+            if($("#team").css('display') === 'block'){
+              $(window).scroll(function(){
+                console.log('done');
+                $("figure:eq(0)").fadeOut('fast', function(){
+                  $("figure:eq(2)").fadeIn('slow');
+                });
+                $("figure:eq(1)").fadeOut('fast', function(){
+                  $("figure:eq(3)").fadeIn('slow');
+                });
+              });
+            }
       	/*setTimeout(function(){
       		$(".preloader").css({
       			transform: 'rotateY(90deg)',
@@ -355,6 +430,11 @@
       }
       $('.btn-close').click(function(event) {
       	$("#Example").hide();
+      });
+      $(".figure-img").hover(function(){
+        $(this).siblings('figcaption').addClass('figcaption');
+      }, function(){
+        $(".figcaption").removeClass('figcaption');
       });
       $("#about-us, #about-us > span > *").click(function(){
         $("#wallpaper").addClass('fadeOutBack');
