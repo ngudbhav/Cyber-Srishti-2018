@@ -49,15 +49,6 @@
     <div class="col-sm-12">
       <img src="/images/wall.jpg" id="wallpaper" style="display: none;">
       <div class="row" id="window-area">
-        <!-- <div class="dialog" id="about" data-role="dialog">
-          <div class="dialog-title">About US</div>
-          <div class="dialog-content">
-            With the motto of stimulating technology, scientific tinking and innovation, Jaypee Institute of Information Technology presents the 3rd edition of its annual technical festival- CYBER SRISHTI. Hence, with an overwhelming student participation and a reach of over 250 colleges, Cyber Srishti has become one of the most established technical festival organised among Delhi-NCR colleges. Cyber Srishti thus endeavours to provide youth with a platform to showcase their talents and skills in cut-throat competitions, displaying pioneering technology and research from all over the country and to interact with renowned personalities.
-          </div>
-          <div class="dialog-actions">
-            <button class="button primary" onclick="Metro.dialog.close('#about')">OK</button>
-          </div>
-        </div> -->
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -259,9 +250,9 @@
             </div>
         </div>
       </div>
-            <div id="team" style="display: block;" class="h-100">
+            <div id="team" style="display: none;background-color: black;" class="h-100">
               <center>
-              <div style="background-color: black;" class="h-100">
+              <div class="h-100">
                 <figure class="figure">
                     <img src="images/test.jpg" class="figure-img rounded img-fluid" alt="A generic square placeholder image with rounded corners in a figure.">
                     <figcaption class="figure-caption"><h5>A caption for the above image.</h5></figcaption>
@@ -280,34 +271,43 @@
                 </figure>
               </div>
               </center>
-              <h1>Scroll Please!</h1>
+              <h1>Scroll up Please! Resize images using node and place!</h1>
             </div>
-        
-      <!-- </div>
-      <div>
-        
+                  <div class="modal contactanimate" id="contact" tabindex="-1" role="dialog" aria-labelledby="contact" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="contact-head">Contact US</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <form>
+         <div class="form-group">
+           <label for="fullName">Full Name</label>
+           <input type="text" name="fullName" id="fullName" class="form-control alert" placeholder="Enter the Full-Name">
+         </div>
+         <div class="form-group">
+           <label for="email">Email</label>
+           <input type="email" name="email" id="email" class="form-control success" placeholder="Valid Email here">
+         </div>
+         <div class="form-group">
+           <label for="message">Message</label>
+           <textarea class="form-control primary" id="message" rows="3" placeholder="Enter Message Here!" area-describedby='terms' name="message"></textarea>
+           <small id="terms" class="form-text text-muted">
+             By submitting this form, you agree that the information you provide here can be used in the way we want. However, We won't harm your privacy.
+           </small>
+         </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
-  </div> -->
-	<!-- <div style="z-index: 2;position: absolute;left:40%;top:20%;color:white;display: none;" id="window">
-		
-	
-		<div data-role="window" data-icon="<span class='mif-rocket'></span>" class="p-2" data-role="draggable" class="window" data-btn-min="false"
-     data-btn-max="false" style="">
-    		<select data-role="select">
-    			<option class="fg-cyan">JIIT-62</option>
-    			<option class="text-bold fg-red">JIIT-128</option>
-			</select>
-			<br>
-			<input type="text" class="alert" placeholder="Team-Name"><br>
-			<input type="text" class="success" placeholder="Full-Name"><br>
-			<input type="text" class="dark" placeholder="Example-Field"><br>
-			<input type="text" class="yellow" placeholder="Example-Field"><br>
-			<button class="button success"><span class="mif-checkmark"></span>Submit</button>
-			<br>
-
-		</div>
-	</div> -->
+  </div>
+</div>
 	<div data-role="charms" data-position="left" id="el" class="charms" style="padding-right: 1%;padding-top: 1%;">
     	<ul class="large">
       		<div data-role="tile" data-size="wide" id="about-us" onclick="$('#exampleModalCenter').modal('show')" style="background-color: #509601;">
@@ -318,15 +318,15 @@
     			<span>&nbsp;Events</span>
       			<span class="icon"><i class="far fa-calendar"></i></span>
       		</div><br>
-      		<div data-role="tile" data-size="wide" id="team-tile" style="background-color: #F37735;">
+      		<div data-role="tile" data-size="wide" id="gallery-tile" style="background-color: #F37735;">
     			<span>&nbsp;Gallery</span>
       			<span class="icon"><i class="fas fa-images"></i></span>
       		</div><br>
-      		<div data-role="tile" data-size="wide" style="background-color: #00AEDB;">
+      		<div data-role="tile" data-size="wide" id="team-tile" style="background-color: #00AEDB;">
     			<span>&nbsp;Team</span>
       			<span class="icon"><i class="fas fa-envelope-open"></i></span>
       		</div><br>
-      		<div data-role="tile" data-size="wide">
+      		<div data-role="tile" data-size="wide" id="contact-tile" onclick="$('#contact').modal('show');">
     			<span>&nbsp;Contact</span>
       			<span class="icon mif-mail"></span>
       		</div>
@@ -366,25 +366,20 @@
                     $("#events").addClass('open-page');
                   }
                   else if(element.attr('id') === 'team-tile'){
-                    $("body").css('overflow', 'hidden');
-                    $("#events").css('display', 'none');
-                    $("#team").css('display', 'block');
+                    //$("body").css('overflow', 'auto');
+                    
                     $("#team").addClass('open-page');
                   }
-                    $(".large>div").removeClass('jumpwin8');
+                  else if(element.attr('id') === 'contact-tile'){
+                    $("#events").css('display', 'none');
+                    $("#team").css('display', 'none');
+                  }
+                  $(".large>div").removeClass('jumpwin8');  
               }, 900);
             });
-            if($("#team").css('display') === 'block'){
-              $(window).scroll(function(){
-                console.log('done');
-                $("figure:eq(0)").fadeOut('fast', function(){
-                  $("figure:eq(2)").fadeIn('slow');
-                });
-                $("figure:eq(1)").fadeOut('fast', function(){
-                  $("figure:eq(3)").fadeIn('slow');
-                });
-              });
-            }
+            /*if($("you id").is('visible')){
+    //do it
+}*/
       	/*setTimeout(function(){
       		$(".preloader").css({
       			transform: 'rotateY(90deg)',
@@ -406,10 +401,32 @@
       		*/
       	/*}, 5500);*/
       });
+              $(window).scroll(function(){
+                if($("#team").css('display') === 'block'){
+                $("figure:eq(0)").fadeOut('fast', function(){
+                  $("figure:eq(2)").fadeIn('slow');
+                });
+                $("figure:eq(1)").fadeOut('fast', function(){
+                  $("figure:eq(3)").fadeIn('slow');
+                });
+              }
+              });
       $("#startmenu").click(function(){
         var charms = $("#el").data('charms');
        	charms.toggle();
      });
+      $('#contact').on('hide.bs.modal', function (e) {
+        if(!$(this).hasClass('hideModal')){
+          $(this).removeClass('contactanimate');
+          $(this).addClass('hideModal');
+          $("#contact").modal('hide');
+          setTimeout(function(){}, 1000);
+        }
+      });
+      $("#contact").on('hidden.bs.modal', function(e){
+        $(this).addClass('contactanimate');
+        $(this).removeClass('hideModal');
+      })
       /*$(".large>div").click(function(){
           var charms = $("#el").data('charms');
           //charms.close();

@@ -74,3 +74,20 @@ figcaption{
   0%{transform: translateY(0em); color: black; background-color: ;opacity: 0;}
   100%{transform: translateY(-4em); color: white; background-color: black;opacity: 1;}
 }
+.contactanimate{
+  transform: scale(0) rotate(720deg);
+}
+.contactanimate.show{
+  animation: contactanimate 1s ease-in 1 normal forwards;
+}
+@keyframes contactanimate{
+  0%{transform: scale(0) rotate(720deg); opacity: 0;}
+  100%{transform: scale(1) rotate(0deg); opacity: 1;}
+}
+.hideModal{
+  animation: hideModal 1s ease-in 1 normal forwards;
+}
+@keyframes hideModal{
+  0%{transform: scale(1);}
+  100%{transform: scale(0);}
+}
