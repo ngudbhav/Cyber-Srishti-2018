@@ -401,7 +401,11 @@
       		*/
       	/*}, 5500);*/
       });
+              var i = 0;
               $(window).scroll(function(){
+                var lastPosition = $(this).scrollTop();
+                console.log(i + "         " + lastPosition);
+                if(lastPosition>i){
                 if($("#team").css('display') === 'block'){
                 $("figure:eq(0)").fadeOut('fast', function(){
                   $("figure:eq(2)").fadeIn('slow');
@@ -410,7 +414,20 @@
                   $("figure:eq(3)").fadeIn('slow');
                 });
               }
+            }
+            else{
+              if($("#team").css('display') === 'block'){
+                $("figure:eq(2)").fadeOut('fast', function(){
+                  $("figure:eq(0)").fadeIn('slow');
+                });
+                $("figure:eq(3)").fadeOut('fast', function(){
+                  $("figure:eq(1)").fadeIn('slow');
+                });
+              }
+            }
+            i = lastPosition;
               });
+            
       $("#startmenu").click(function(){
         var charms = $("#el").data('charms');
        	charms.toggle();
