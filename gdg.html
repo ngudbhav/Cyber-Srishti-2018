@@ -366,9 +366,9 @@
                     $("#events").addClass('open-page');
                   }
                   else if(element.attr('id') === 'team-tile'){
-                    //$("body").css('overflow', 'auto');
-                    
                     $("#team").addClass('open-page');
+                    $("#events").css('display', 'none');
+                    $("#team").css('display', 'block');
                   }
                   else if(element.attr('id') === 'contact-tile'){
                     $("#events").css('display', 'none');
