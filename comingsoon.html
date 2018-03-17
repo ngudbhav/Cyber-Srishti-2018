@@ -15,7 +15,64 @@
 	<div class="row">
 		<div class="col-sm-12">
 			<img src="images/soon.jpg" style="width: 100%;height: 100%;">
+			<div style="position: absolute;left: 65%;top: 45.1%;color: white;height: auto;" id="dot">
+				<h4 id="count"></h4>
+			</div>
+			<div data-role="progress" data-cls-back="bg-white" data-cls-bar="bg-black" data-type="line" style="position: absolute;top: 57%;height: 20px;width: 49%;left: 25.5%;border-radius: 20px;"></div>
 		</div>
 	</div>
 </body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script type="text/javascript">
+	if($(window).width()<500){
+		console.log('Done');
+		$("img").attr("src", "images/soon-mini.jpg");
+		$("html").css('height', 'auto');
+	}
+	else{
+		$("img").attr("src", "images/soon.jpg");
+		$("#dot").css({
+			left: '53%',
+			top: '47.5%'
+		});
+	}
+	var count = 1;
+	setInterval(function(){
+		if(count === 1){
+			$("#count").html(". ");
+			count = 2;
+		}
+		else if(count === 2){
+			$("#count").html(". . ");
+			count = 3;
+		}
+		else{
+			$("#count").html(". . .");
+			count = 1;
+		} 
+	}, 1000);
+	/*var count = 1;
+	while(1){
+		setTimeout(function(){
+			if(count === 1){
+				$("#count").html(". ");
+				count = 2;
+			}
+		}, 1000);
+		setTimeout(function(){
+			if(count === 2){
+				$("#count").html(". . ");
+				count = 3;
+			}
+		});
+		setTimeout(function(){
+			if(count === 3){
+				$("#count").html(". . .");
+				count = 1;
+			}
+		});
+	}*/
+</script>
 </html>
