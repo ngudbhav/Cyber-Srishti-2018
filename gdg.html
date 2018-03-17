@@ -12,11 +12,11 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <!-- <div class="preloader container-fluid" style="background-color: black;padding: 0;height: 100%;">
+    <div class="preloader container-fluid" style="background-color: black;padding: 0;height: 100%;">
       <div class="row">
         <div class="col-sm-12">
           <center>
-            <img src="logo1.png">
+            <img src="images/logo1.png">
           </center>
         </div>
       </div>
@@ -43,31 +43,34 @@
           </center>
         </div>
       </div>
-    </div> -->
-<div class="container-fluid h-100" style="padding: 0;">
+    </div>
+<div class="container-fluid" style="padding: 0;">
   <div class="row">
     <div class="col-sm-12">
-      <img src="/images/wall.jpg" id="wallpaper" style="display: none;">
-      <div class="row" id="window-area">
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">About US</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+      <!-- <video autoplay height="100%" width="100%" loop style="position: relative;z-index: 10;">
+        <source src="images/mymovie.mp4" type="video/mp4">
+      </video> -->
+    <div id="about-us" style="display: none;">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="card">
+            <div class="card-body" style="line-height: 2.7em">
+              <h5>With the motto of stimulating technology, scientific tinking and innovation, Jaypee Institute of Information Technology presents the 3rd edition of its annual technical festival- CYBER SRISHTI. Hence, with an overwhelming student participation and a reach of over 250 colleges, Cyber Srishti has become one of the most established technical festival organised among Delhi-NCR colleges. Cyber Srishti thus endeavours to provide youth with a platform to showcase their talents and skills in cut-throat competitions, displaying pioneering technology and research from all over the country and to interact with renowned personalities.</h5>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="modal-body">
-       With the motto of stimulating technology, scientific tinking and innovation, Jaypee Institute of Information Technology presents the 3rd edition of its annual technical festival- CYBER SRISHTI. Hence, with an overwhelming student participation and a reach of over 250 colleges, Cyber Srishti has become one of the most established technical festival organised among Delhi-NCR colleges. Cyber Srishti thus endeavours to provide youth with a platform to showcase their talents and skills in cut-throat competitions, displaying pioneering technology and research from all over the country and to interact with renowned personalities.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="card">
+            <div class="card-body">
+              <div id="map" style="width: 100%;height: 500px;">
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-      </div>
     </div>
   </div>
       <div class="row" id="events" style="opacity: 0;display: none;">
@@ -250,8 +253,17 @@
             </div>
         </div>
       </div>
+      <!-- <div id="gallery">
+        <div data-role="wizard" data-start="3">
+          <section><div class="page-content">Page 1</div></section>
+          <section><div class="page-content">Page 2</div></section>
+          <section><div class="page-content">Page 3</div></section>
+          <section><div class="page-content">Page 4</div></section>
+          <section><div class="page-content">Page 5</div></section>
+        </div>
+      </div> -->
             <div id="team" style="display: none;background-color: black;" class="h-100">
-              <center>
+              <center><br>
               <div class="h-100">
                 <figure class="figure">
                     <img src="images/test.jpg" class="figure-img rounded img-fluid" alt="A generic square placeholder image with rounded corners in a figure.">
@@ -271,46 +283,14 @@
                 </figure>
               </div>
               </center>
-              <h1>Scroll up Please! Resize images using node and place!</h1>
+              <!-- <h1>Scroll up Please! Resize images using node and place!</h1> -->
             </div>
-                  <div class="modal contactanimate" id="contact" tabindex="-1" role="dialog" aria-labelledby="contact" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="contact-head">Contact US</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-       <form>
-         <div class="form-group">
-           <label for="fullName">Full Name</label>
-           <input type="text" name="fullName" id="fullName" class="form-control alert" placeholder="Enter the Full-Name">
-         </div>
-         <div class="form-group">
-           <label for="email">Email</label>
-           <input type="email" name="email" id="email" class="form-control success" placeholder="Valid Email here">
-         </div>
-         <div class="form-group">
-           <label for="message">Message</label>
-           <textarea class="form-control primary" id="message" rows="3" placeholder="Enter Message Here!" area-describedby='terms' name="message"></textarea>
-           <small id="terms" class="form-text text-muted">
-             By submitting this form, you agree that the information you provide here can be used in the way we want. However, We won't harm your privacy.
-           </small>
-         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+                  <div id="contact">
+                    <!-- Design Contact Page -->
+                  </div>
 	<div data-role="charms" data-position="left" id="el" class="charms" style="padding-right: 1%;padding-top: 1%;">
     	<ul class="large">
-      		<div data-role="tile" data-size="wide" id="about-us" onclick="$('#exampleModalCenter').modal('show')" style="background-color: #509601;">
+      		<div data-role="tile" data-size="wide" id="about-tile" style="background-color: #509601;">
     			<span>&nbsp;About us</span>
       			<span class="icon"><i class="fas fa-users"></i></span>
       		</div><br>
@@ -326,61 +306,82 @@
     			<span>&nbsp;Team</span>
       			<span class="icon"><i class="fas fa-envelope-open"></i></span>
       		</div><br>
-      		<div data-role="tile" data-size="wide" id="contact-tile" onclick="$('#contact').modal('show');">
-    			<span>&nbsp;Contact</span>
+      		<div data-role="tile" data-size="wide" id="contact-tile">
+    			<span>&nbsp;Hospitality</span>
       			<span class="icon mif-mail"></span>
       		</div>
     	</ul>
 	</div>
 	<div data-role="charms" data-position="bottom" id="start" class="charms">
-		<span>
-			<button class="button primary" id="startmenu"><span class="icon mif-apps"></span> Start</button>
-		</span>
-		<button class="button primary small" id="Example">Window</button>
+			<button class="button primary large" id="startmenu"><span class="icon mif-apps"></span> Start</button>
+      <span class="pull-right" style="margin-left: 70%;"> <span class="mif-copyright mif-3x fg-blue"></span>&nbsp;Cyber-Srishti 2018</span>
+    
 	</div>
 </div>
     <!-- jQuery first, then Metro UI JS -->
-    <script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
    	<script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZ1d-vhJFZUo0ikKQvLTR83nv3Y0o9YaI">
+    </script>
+    <script>
+      var map;
+      function initMap(){
+      var jiit = {lat: 28.630453, lng: 77.372093};
+      map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 16,
+        center: jiit
+      });
+      var marker = new google.maps.Marker({
+        position: jiit,
+        map: map
+      });
+      }
+    </script>
     <script type="text/javascript">
       $(document).ready(function() {
         var charms = $("#start").data('charms');
           charms.open();
             $(".large>div").bind('click', function(){
-              var charms = $("#el").data('charms');
+              /*$("video").hide();
+              $("#overlay").hide();
+              */var charms = $("#el").data('charms');
               charms.toggle();
               //$("#gallery").css('display', 'none');
-              if($(this).attr('id') !== 'about-us'){
               $(this).addClass('jumpwin8');
-            }
               var element = $(this);
-
-                setTimeout(function(){
-                  if(element.attr('id') === 'event-tile'){
+              /*Remove setTimeout(callback, after, arg1, arg2, arg3);*/
+              if(element.attr('id') === 'about-tile'){
+                    $("#events").css('display', 'none');
+                    $("#team").css('display', 'none');
+                    $("#about-us").css('display', 'block');
+                    $("#about-us").addClass('open-page');
+                    $(".card").addClass('opened');
+                  }
+                  else if(element.attr('id') === 'event-tile'){
+                    $("#about-us").css('display', 'none');
                     $("#team").css('display', 'none');
                     $("#events").css('display', 'block');
                     $("#events").addClass('open-page');
                   }
                   else if(element.attr('id') === 'team-tile'){
+                    $("#about-us").css('display', 'none');
                     $("#team").addClass('open-page');
                     $("#events").css('display', 'none');
                     $("#team").css('display', 'block');
+                    $(window).scrollLock = true;
                   }
                   else if(element.attr('id') === 'contact-tile'){
+                    $("#about-us").css('display', 'none');
                     $("#events").css('display', 'none');
                     $("#team").css('display', 'none');
                   }
-                  $(".large>div").removeClass('jumpwin8');  
-              }, 900);
+              setTimeout(function(){$(".large>div").removeClass('jumpwin8');initMap();}, 500);
             });
             /*if($("you id").is('visible')){
     //do it
 }*/
-      	/*setTimeout(function(){
+      	setTimeout(function(){
       		$(".preloader").css({
       			transform: 'rotateY(90deg)',
       			opacity : 0,
@@ -390,11 +391,13 @@
       	}, 3000);
       	setTimeout(function(){
       		$(".preloader").css('display', 'none');
+          $(".container-fluid").addClass('h-100');
       		$("#main-screen").css({
       			opacity: 1,
       			transition : 'opacity 1s'
-      		})
-      	}, 4500);*/
+      		});
+          $("#overlay").css('display', 'block');;
+      	}, 4500);
       	/*setTimeout(function(){
       		var height = $(document).height();
       		$("#wallpaper").css('height', height);
@@ -402,28 +405,37 @@
       	/*}, 5500);*/
       });
               var i = 0;
-              $(window).scroll(function(){
+              var scrolledTop = false;
+              $(window).scroll(function(e){
+                e.preventDefault();
+                e.stopPropagation();
                 var lastPosition = $(this).scrollTop();
                 console.log(i + "         " + lastPosition);
                 if(lastPosition>i){
+                  if(!scrolledTop){
                 if($("#team").css('display') === 'block'){
                 $("figure:eq(0)").fadeOut('fast', function(){
-                  $("figure:eq(2)").fadeIn('slow');
+                  $("figure:eq(2)").fadeIn('fast');
                 });
                 $("figure:eq(1)").fadeOut('fast', function(){
-                  $("figure:eq(3)").fadeIn('slow');
+                  $("figure:eq(3)").fadeIn('fast');
                 });
               }
+              scrolledTop = true;
+            }
             }
             else{
+              if(scrolledTop){
               if($("#team").css('display') === 'block'){
                 $("figure:eq(2)").fadeOut('fast', function(){
-                  $("figure:eq(0)").fadeIn('slow');
+                  $("figure:eq(0)").fadeIn('fast');
                 });
                 $("figure:eq(3)").fadeOut('fast', function(){
-                  $("figure:eq(1)").fadeIn('slow');
+                  $("figure:eq(1)").fadeIn('fast');
                 });
               }
+              scrolledTop = false;
+            }
             }
             i = lastPosition;
               });
@@ -470,11 +482,11 @@
       }, function(){
         $(".figcaption").removeClass('figcaption');
       });
-      $("#about-us, #about-us > span > *").click(function(){
+      /*$("#about-us, #about-us > span > *").click(function(){
         $("#wallpaper").addClass('fadeOutBack');
         setTimeout(function(){$("#wallpaper").css('display', 'none');}, 300)
         $(".loader").addClass('loading');
-        /*$("#wallpaper").css({
+        *//*$("#wallpaper").css({
           transform: 'translateZ(-3em) scale(0.6)',
           opacity : 0,
           transition: 'transform 0.5s ease-in-out, opacity 0.5s ease-in-out'
@@ -504,7 +516,7 @@
             transition: 'transform 0.5s ease-in-out, opacity 0.5 ease-in-out' 
           });
         }, 1500);*/
-      });
+     /* });*/
     </script>
   </body>
 </html>
