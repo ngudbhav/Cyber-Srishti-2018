@@ -7,7 +7,7 @@ app.use(serve.static('public'));
 app.use('', serve.static(path.join(__dirname + '')));
 app.set('port', (process.env.PORT || 5000));
 app.get('/', function(req, res, next){
-	res.sendFile((path.join(__dirname+'/comingsoon.html')));
+	res.sendFile((path.join(__dirname+'/gdg.html')));
 });
 var server = (app).listen(app.get('port'), function(){
 	var host = server.address().address;

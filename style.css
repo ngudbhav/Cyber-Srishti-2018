@@ -79,10 +79,30 @@ html, body{
   0%{transform: translateX(0vw) translateY(0vh) scale(1,1);}
   100%{transform: translateX(56vw) translateY(-26vh) scale(10, 8.2) ;}
 }
-/*@keyframes opac{
-  0%{opacity: 1;}
-  100%{opacity: 0;}
-}*/
+.carousel-item.carousel-item-left.active{
+  transform: scale(0.2, 0.2);
+  opacity: 0;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+.carousel-item.carousel-item-next.carousel-item-left{
+  transform: scale(1, 1);
+  opacity: 1;
+  transition: transform 0.5s ease-in, opacity 0.5s ease-in;
+}
+.carousel-item.active{
+  transform: scale(1, 1);
+  opacity: 1;
+  transition: transform 0.5s ease-in, opacity 0.5s ease-in;
+}
+.carousel-control-prev, .carousel-control-next{
+  opacity: 0;
+  transform: translateY(-20vh);
+}
+.carousel :hover > a{
+  transform: translateY(0vh);
+  opacity: 1;
+  transition: transform 0.1s ease-in, opacity 0.1s ease-in;
+}
 .open-page{
   animation: eventopen 1s cubic-bezier(.66,.04,.36,1.03) 1 normal forwards;
 }
