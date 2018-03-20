@@ -4,7 +4,6 @@
 }
 html, body{
   height: 100%;
-  /*overflow: hidden;*/
 }
 .large>div{
   background-color: rebeccapurple;
@@ -45,19 +44,19 @@ html, body{
   transition: transform 0.1s;
 }
 #about-tile.jumpwin8{
-  animation: jumpwinabout 0.5s;
+  animation: jumpwinabout 0.8s;
 }
 #event-tile.jumpwin8{
-  animation: jumpwinevent 0.5s;
+  animation: jumpwinevent 0.8s;
 }
 #gallery-tile.jumpwin8{
-  animation: jumpwingallery 0.5s;
+  animation: jumpwingallery 0.8s;
 }
 #team-tile.jumpwin8{
-  animation: jumpwinteam 0.5s;
+  animation: jumpwinteam 0.8s;
 }
-#contact-tile.jumpwin8{
-  animation: jumpwincontact 0.5s;
+#hospitality-tile.jumpwin8{
+  animation: jumpwinaccomo 0.8s;
 }
 @keyframes jumpwinabout{
   0%{transform: translateX(0vw) translateY(0vh) scale(1,1);}
@@ -65,7 +64,7 @@ html, body{
 }
 @keyframes jumpwinevent{
   0%{transform: translateX(0vw) translateY(0vh) scale(1,1);}
-  100%{transform: translateX(56vw) translateY(16vh) scale(10, 8.2) ;}
+  100%{transform: translateX(56vw) translateY(18vh) scale(10, 8.2) ;}
 }
 @keyframes jumpwingallery{
   0%{transform: translateX(0vw) scale(1,1);}
@@ -75,7 +74,7 @@ html, body{
   0%{transform: translateX(0vw) translateY(0vh) scale(1,1);}
   100%{transform: translateX(56vw) translateY(-14.5vh) scale(10, 8.2) ;}
 }
-@keyframes jumpwincontact{
+@keyframes jumpwinaccomo{
   0%{transform: translateX(0vw) translateY(0vh) scale(1,1);}
   100%{transform: translateX(56vw) translateY(-26vh) scale(10, 8.2) ;}
 }
@@ -94,17 +93,8 @@ html, body{
   opacity: 1;
   transition: transform 0.5s ease-in, opacity 0.5s ease-in;
 }
-.carousel-control-prev, .carousel-control-next{
-  opacity: 0;
-  transform: translateY(-20vh);
-}
-.carousel :hover > a{
-  transform: translateY(0vh);
-  opacity: 1;
-  transition: transform 0.1s ease-in, opacity 0.1s ease-in;
-}
 .open-page{
-  animation: eventopen 1s cubic-bezier(.66,.04,.36,1.03) 1 normal forwards;
+  animation: eventopen 1.5s cubic-bezier(.66,.04,.36,1.03) 1 normal forwards;
 }
 @keyframes eventopen{
   0%{transform:rotateY(100deg) translate(10em);opacity:0}
@@ -139,7 +129,45 @@ figcaption{
   0%{transform: scale(1);}
   100%{transform: scale(0);}
 }
-#overlay {
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(251, 110, 15, 0.8);
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  -webkit-transform:scale(0);
+  transition: 1s ease;
+}
+.card-body:hover .overlay {
+  transform: scale(1)
+}
+.overlayContent{
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.hovercolor{
+  background-color: white;
+}
+.hovercolor: hover{
+  background-color: purple;
+}
+/*.card:hover > .card-footer{
+  animation: cardfooter 0.2s ease-in 1 normal forwards;
+}
+@keyframes cardfooter{
+  0%{height: 0%;}
+  100%{height: 100%;}
+}*/
+/*#overlay {
     position: fixed; 
     display: none; 
     width: 100%; 
@@ -150,4 +178,4 @@ figcaption{
     bottom: 0;
     background-color: rgba(0,0,0,0.8); 
     z-index: 2; 
-}
+}*/
