@@ -11,6 +11,31 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      function participants(value){
+          if(value === 1){
+            $('#participant1').hide();$('#participant2').hide();$('#participant3').hide();$('#participant4').hide();
+          }
+          else if(value === 2){
+            $('#participant2').show();$('#participant3').hide();$('#participant4').hide();
+          }
+          else if(value === 3){
+            $('#participant2').show();$('#participant3').show();$('#participant4').hide();
+          }
+          else if(value === 4){
+            $('#participant2').show();$('#participant3').show();$('#participant4').show();
+          }
+        }
+        function college(value){
+          if(value === 2){
+            $("#collegename").fadeIn('fast');
+          }
+          else{
+            $("#collegename").fadeOut('fast');
+          }
+        }
+    </script>
   </head>
   <body>
     <div class="preloader container-fluid" style="background-color: black;padding: 0;height: 100%;">
@@ -21,7 +46,7 @@
           </center>
         </div>
       </div>
-    	<br>
+      <br>
       <div class="row">
         <div class="col-sm-12">
           <div data-role="progress" data-type="load" data-value="35" data-buffer="75"></div>
@@ -156,20 +181,20 @@
         </div>
         <div class="modal-body">
           <form id="eventRegister">
-            <select data-role="select">
-              <option class="text-bold" disabled selected>College</option>
+            <select data-role="select" data-on-change="college(this.value)">
+              <option class="text-bold" selected disabled>College</option>
               <option class="fg-cyan">JIIT-62</option>
               <option class="text-bold fg-red">JIIT-128</option>
-              <option selected class="fg-green">Others</option>
+              <option class="fg-green" value="2">Others</option>
             </select>
             <br>
             <input type="text" name="college" style="display: none;" id="collegeName">
-            <select data-role="select">
-              <option class="text-bold" disabled selected>No. of Participants</option>
-              <option class="fg-cyan" onclick="$('#participant1').hide();$('#participant2').hide();$('#participant3').hide();$('#participant4').hide();">One</option>
-              <option class="text-bold fg-red" onclick="$('#participant2').show();$('#participant3').hide();$('#participant4').hide();">Two</option>
-              <option selected class="fg-green" onclick="$('#participant2').show();$('#participant3').show();$('#participant4').hide();">Three</option>
-              <option selected class="fg-cyan" onclick="$('#participant2').show();$('#participant3').show();$('#participant4').show();">Four</option>
+            <select data-role="select" data-on-change="participants(this.value)">
+              <option class="text-bold" selected disabled>No. of Participants</option>
+              <option class="fg-cyan" value="1">One</option>
+              <option class="text-bold fg-red" value="2">Two</option>
+              <option class="fg-green" value="3">Three</option>
+              <option class="fg-cyan" value="4">Four</option>
             </select><br>
             <div id="participant2" style="display: none;">
               <div class="form-group">
@@ -216,7 +241,8 @@
             <div class="form-group">
               <label for="phone">Phone Number</label>
               <input type="text" name="phone" class="form-control success" id="phone">
-            </div><br>
+            </div>
+            <br>
             <select data-role="select">
               <option class="text-bold" disabled selected>Select year</option>
               <option class="fg-cyan">1st year</option>
@@ -246,7 +272,7 @@
                   <div class="card-body">
                     <div class="overlay">
                       <div class="overlayContent">
-                        <div ><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
+                        <div><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
                         <div><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button>
                         </div>
@@ -270,7 +296,7 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="overlay">
-                      <div class="overlayContent"><div ><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
+                      <div class="overlayContent"><div><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
                         <div><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button>
                         </div></div>
@@ -290,7 +316,7 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="overlay">
-                      <div class="overlayContent"><div ><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
+                      <div class="overlayContent"><div><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
                         <div><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button>
                         </div></div>
@@ -313,7 +339,7 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="overlay">
-                      <div class="overlayContent"><div ><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
+                      <div class="overlayContent"><div><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
                         <div><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button>
                         </div></div>
@@ -333,7 +359,7 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="overlay">
-                      <div class="overlayContent"><div ><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
+                      <div class="overlayContent"><div><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
                         <div><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button>
                         </div></div>
@@ -353,7 +379,7 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="overlay">
-                      <div class="overlayContent"><div ><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
+                      <div class="overlayContent"><div><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
                         <div><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button>
                         </div></div>
@@ -376,7 +402,7 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="overlay">
-                      <div class="overlayContent"><div ><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
+                      <div class="overlayContent"><div><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
                         <div><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button>
                         </div></div>
@@ -396,7 +422,7 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="overlay">
-                      <div class="overlayContent"><div ><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
+                      <div class="overlayContent"><div><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
                         <div><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button>
                         </div></div>
@@ -416,70 +442,7 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="overlay">
-                      <div class="overlayContent"><div ><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
-                        </div><br>
-                        <div><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button>
-                        </div></div>
-                    </div>
-                    <div class="card-title">
-                      Automated Robotics Challenge
-                    </div>
-                    <p class="card-text">
-                      <br>
-                      Theme:  <br>A blend of Manual Autonomous Robotics Challenge
-                    <br>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <br><br>
-            <div class="row">
-              <div class="col-sm-4">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="overlay">
-                      <div class="overlayContent"><div ><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
-                        </div><br>
-                        <div><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button>
-                        </div></div>
-                    </div>
-                    <div class="card-title">
-                      Automated Robotics Challenge
-                    </div>
-                    <p class="card-text">
-                      <br>
-                      Theme:  <br>A blend of Manual Autonomous Robotics Challenge
-                    <br>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="overlay">
-                      <div class="overlayContent"><div ><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
-                        </div><br>
-                        <div><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button>
-                        </div></div>
-                    </div>
-                    <div class="card-title">
-                      Automated Robotics Challenge
-                    </div>
-                    <p class="card-text">
-                      <br>
-                      Theme:  <br>A blend of Manual Autonomous Robotics Challenge
-                    <br>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="overlay">
-                      <div class="overlayContent"><div ><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
+                      <div class="overlayContent"><div><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
                         <div><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button>
                         </div></div>
@@ -502,7 +465,7 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="overlay">
-                      <div class="overlayContent"><div ><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
+                      <div class="overlayContent"><div><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
                         <div><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button>
                         </div></div>
@@ -522,7 +485,7 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="overlay">
-                      <div class="overlayContent"><div ><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
+                      <div class="overlayContent"><div><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
                         <div><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button>
                         </div></div>
@@ -542,7 +505,70 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="overlay">
-                      <div class="overlayContent"><div ><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
+                      <div class="overlayContent"><div><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
+                        </div><br>
+                        <div><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button>
+                        </div></div>
+                    </div>
+                    <div class="card-title">
+                      Automated Robotics Challenge
+                    </div>
+                    <p class="card-text">
+                      <br>
+                      Theme:  <br>A blend of Manual Autonomous Robotics Challenge
+                    <br>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br><br>
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="overlay">
+                      <div class="overlayContent"><div><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
+                        </div><br>
+                        <div><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button>
+                        </div></div>
+                    </div>
+                    <div class="card-title">
+                      Automated Robotics Challenge
+                    </div>
+                    <p class="card-text">
+                      <br>
+                      Theme:  <br>A blend of Manual Autonomous Robotics Challenge
+                    <br>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="overlay">
+                      <div class="overlayContent"><div><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
+                        </div><br>
+                        <div><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button>
+                        </div></div>
+                    </div>
+                    <div class="card-title">
+                      Automated Robotics Challenge
+                    </div>
+                    <p class="card-text">
+                      <br>
+                      Theme:  <br>A blend of Manual Autonomous Robotics Challenge
+                    <br>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="overlay">
+                      <div class="overlayContent"><div><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
                         <div><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button>
                         </div></div>
@@ -565,7 +591,7 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="overlay">
-                      <div class="overlayContent"><div ><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
+                      <div class="overlayContent"><div><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
                         <div><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button>
                         </div></div>
@@ -584,13 +610,13 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="overlay">
-                      <div class="overlayContent"><div ><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
+                      <div class="overlayContent"><div><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
                         <div><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button>
                         </div></div>
                     </div>
                     <div class="overlay">
-                      <div class="overlayContent"><div ><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
+                      <div class="overlayContent"><div><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
                         <div><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button>
                         </div></div>
@@ -608,7 +634,7 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="overlay">
-                      <div class="overlayContent"><div ><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
+                      <div class="overlayContent"><div><button type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
                         <div><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button>
                         </div></div>
@@ -623,11 +649,13 @@
                 </div>
               </div>
             </div>
+            <br><br><br>
         </div>
       </div>
       </div>
       <div id="gallery" class="row" style="height: inherit;display: none;">
         <div class="container" style="height: inherit;">
+          <br>
           <div id="galleryThumbnails">
             <br>
           <center><div class="heading">Gallery</div>(Click on an image to run slide-show)</center>
@@ -664,8 +692,9 @@
               <img src="images/gallery9-mini.jpg" class="img-thumbnail" data-value="9">
             </div>
           </div>
+          <br><br><br>
         </div>
-        <div id="galleryCarousel" class="carousel slide" data-ride="carousel" data-interval="3000" data-pause="false" style="padding: 1%;height: inherit;display: none;">
+        <div id="galleryCarousel" class="carousel slide" data-ride="carousel" data-interval="3000" data-pause="false" style="padding: 1%;height: 85%;display: none;box-shadow: 10px 10px 10px 10px #888888;padding-bottom: 3%;">
           <br><div style="width: 100%;z-index: 20;"><i class="fas fa-times fa-3x place-right"></i></div>
           <br>
           <div class="carousel-inner" style="height: inherit;">
@@ -709,28 +738,34 @@
         </div>
       </div>
       <!-- row not included in team page -->
-            <div id="team" style="display: none;background-color: black;" class="h-100">
+            <div id="team" class="h-100" style="display: none;background-color: black;">
               <center><br>
-              <div class="h-100">
-                <figure class="figure">
-                    <img src="images/test.jpg" class="figure-img rounded img-fluid" alt="A generic square placeholder image with rounded corners in a figure.">
+            <div class="container" style="padding-top: 2%;">
+              <div class="row" style="height: inherit;">
+                <div class="col-sm-3 offset-sm-3">
+                  <figure class="figure">
+                    <img src="images/test.jpg" class="figure-img rounded img-fluid">
                     <figcaption class="figure-caption"><h5>A caption for the above image.</h5></figcaption>
                   </figure>
-                <figure class="figure">
-                    <img src="images/test.jpg" class="figure-img rounded img-fluid" alt="A generic square placeholder image with rounded corners in a figure.">
-                    <figcaption class="figure-caption"><h5>A caption for the above image.</h5></figcaption>
-                </figure>
-                <figure class="figure" style="display: none;">
-                    <img src="images/test1.jpg" class="figure-img rounded img-fluid" alt="A generic square placeholder image with rounded corners in a figure.">
+                  <figure class="figure" style="display: none;">
+                    <img src="images/test1.jpg" class="figure-img rounded img-fluid">
                     <figcaption class="figure-caption"><h5>A caption for the above image.</h5></figcaption>
                   </figure>
-                <figure class="figure" style="display: none;">
-                    <img src="images/test1.jpg" class="figure-img rounded img-fluid" alt="A generic square placeholder image with rounded corners in a figure.">
+                </div>
+                <div class="col-sm-3">
+                  <figure class="figure">
+                    <img src="images/test.jpg" class="figure-img rounded img-fluid">
                     <figcaption class="figure-caption"><h5>A caption for the above image.</h5></figcaption>
-                </figure>
+                  </figure>
+                  <figure class="figure" style="display: none;">
+                    <img src="images/test1.jpg" class="figure-img rounded img-fluid">
+                    <figcaption class="figure-caption"><h5>A caption for the above image.</h5></figcaption>
+                  </figure>
+                </div>
               </div>
               </center>
               <!-- <h1>Scroll up Please! Resize images using node and place!</h1> -->
+            </div>
             </div>
                   <!-- <div id="accomodation">
                     <div class="row">
@@ -739,32 +774,33 @@
                       </div>
                     </div>
                   </div> -->
-	<div data-role="charms" data-position="left" id="el" class="charms" style="padding-right: 1%;padding-top: 1%;">
-    	<ul class="large">
-      		<div data-role="tile" data-size="wide" id="about-tile" style="background-color: #ED1E25;">
+                  <!-- Loading bar half -->
+  <div data-role="charms" data-position="left" id="el" class="charms" style="padding-right: 1%;padding-top: 1%;">
+      <ul class="large">
+          <div data-role="tile" data-size="wide" id="about-tile" style="background-color: #ED1E25;">
           <span>&nbsp;About us</span>
-      			<span class="icon"><i class="fas fa-users"></i></span>
-      		</div><br>
-      		<div data-role="tile" data-size="wide" id="event-tile" style="background-color: #9542C1;">
-    			<span>&nbsp;Events</span>
-      			<span class="icon"><i class="far fa-calendar"></i></span>
-      		</div><br>
-      		<div data-role="tile" data-size="wide" id="gallery-tile" style="background-color: #008dcc;">
-    			<span>&nbsp;Gallery</span>
-      			<span class="icon"><i class="fas fa-images"></i></span>
-      		</div><br>
-      		<div data-role="tile" data-size="wide" id="team-tile" style="background-color: #00b433;">
-    			<span>&nbsp;Team</span>
-      			<span class="icon"><i class="fas fa-envelope-open"></i></span>
-      		</div><br>
-      		<div data-role="tile" data-size="wide" id="hospitality-tile" style="background-color: #f77605;">
-    			<span>&nbsp;Hospitality</span>
-      			<span class="icon"><i class="fab fa-accessible-icon"></i></span>
-      		</div>
-    	</ul>
-	</div>
-	<div data-role="charms" data-position="bottom" id="start" class="charms">
-			<div style="width: 100%;" class="d-flex flex-justify-between">
+            <span class="icon"><i class="fas fa-users"></i></span>
+          </div><br>
+          <div data-role="tile" data-size="wide" id="event-tile" style="background-color: #9542C1;">
+          <span>&nbsp;Events</span>
+            <span class="icon"><i class="far fa-calendar"></i></span>
+          </div><br>
+          <div data-role="tile" data-size="wide" id="gallery-tile" style="background-color: #008dcc;">
+          <span>&nbsp;Gallery</span>
+            <span class="icon"><i class="fas fa-images"></i></span>
+          </div><br>
+          <div data-role="tile" data-size="wide" id="team-tile" style="background-color: #00b433;">
+          <span>&nbsp;Team</span>
+            <span class="icon"><i class="fas fa-envelope-open"></i></span>
+          </div><br>
+          <div data-role="tile" data-size="wide" id="hospitality-tile" style="background-color: #f77605;">
+          <span>&nbsp;Hospitality</span>
+            <span class="icon"><i class="fab fa-accessible-icon"></i></span>
+          </div>
+      </ul>
+  </div>
+  <div data-role="charms" data-position="bottom" id="start" class="charms">
+      <div style="width: 100%;" class="d-flex flex-justify-between">
       
       <button class="button large" id="startmenu"><span class="icon mif-apps"></span> Start</button>
       <button class="button large" id="contact-tile" onclick="$('#contact').modal('toggle');"><span class="icon mif-phone"></span> Contact-Us!</button>
@@ -772,11 +808,10 @@
      </div>
 
     
-	</div>
+  </div>
 </div>
     <!-- jQuery first, then Metro UI JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-   	<script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+    <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZ1d-vhJFZUo0ikKQvLTR83nv3Y0o9YaI">
     </script>
@@ -803,26 +838,33 @@
           $("#galleryThumbnails>div>div>img").click(function(){
             var x = $(this).attr('data-value');
             $(".carousel-inner>.carousel-item:eq("+(x-1)+")").addClass('active');
-            $("#galleryThumbnails").hide('fast');
-            $("#galleryCarousel").show('fast');
+            $("#galleryThumbnails").fadeOut('fast');
+            $("#galleryCarousel").fadeIn('fast');
             charms.close();
           });
-          $(".fa-times").click(function() {
+          function galleryFunction(){
             $(".carousel-inner>.active").removeClass('active');
-            $("#galleryCarousel").hide('fast');
-            $("#galleryThumbnails").show('fast');
+            $("#galleryCarousel").fadeOut('fast', function(){
+              $("#galleryThumbnails").fadeIn('fast');
+            });
             charms.open();
+          }
+          /*$("#eventRegister").modal('shown.bs.modal', function(){
+            charms.close();
           });
+          $("#eventRegister").modal('hidden.bs.modal', function(){
+            charms.open();
+          });*/
+          $(".fa-times").click(galleryFunction);
             $(".large>div").bind('click', function(){
               /*$("video").hide();
               $("#overlay").hide();
+
               */var charms = $("#el").data('charms');
               charms.toggle();
-              //var 
-              //$("#gallery").css('display', 'none');
+              galleryFunction();
               $(this).addClass('jumpwin8');
               var element = $(this);
-              /*Remove setTimeout(callback, after, arg1, arg2, arg3);*/
               if(element.attr('id') === 'about-tile'){
                     $("#events").css('display', 'none');
                     $("#gallery").css('display', 'none');
@@ -865,29 +907,29 @@
             });
             /*if($("you id").is('visible')){
     //do it
-}*/
-      	setTimeout(function(){
-      		$(".preloader").css({
-      			transform: 'rotateY(90deg)',
-      			opacity : 0,
-      			transition : 'transform 1s ease-in-out, opacity 1s'
-      		});
-      		$("#main").css('opacity', '0');
-      	}, 3000);
-      	setTimeout(function(){
-      		$(".preloader").css('display', 'none');
+}*/ 
+        setTimeout(function(){
+          $(".preloader").css({
+            transform: 'rotateY(90deg)',
+            opacity : 0,
+            transition : 'transform 1s ease-in-out, opacity 1s'
+          });
+          $("#main").css('opacity', '0');
+        }, 3000);
+        setTimeout(function(){
+          $(".preloader").css('display', 'none');
           $(".container-fluid").addClass('h-100');
-      		$("#main-screen").css({
-      			opacity: 1,
-      			transition : 'opacity 1s'
-      		});
+          $("#main-screen").css({
+            opacity: 1,
+            transition : 'opacity 1s'
+          });
           $("#overlay").css('display', 'block');;
-      	}, 4500);
-      	/*setTimeout(function(){
-      		var height = $(document).height();
-      		$("#wallpaper").css('height', height);
-      		*/
-      	/*}, 5500);*/
+        }, 4500);
+        /*setTimeout(function(){
+          var height = $(document).height();
+          $("#wallpaper").css('height', height);
+          */
+        /*}, 5500);*/
       });
               var i = 0;
               var scrolledTop = false;
@@ -895,14 +937,13 @@
                 e.preventDefault();
                 e.stopPropagation();
                 var lastPosition = $(this).scrollTop();
-                console.log(i + "         " + lastPosition);
                 if(lastPosition>i){
                   if(!scrolledTop){
                 if($("#team").css('display') === 'block'){
                   $("figure:eq(0)").fadeOut('fast', function(){
-                    $("figure:eq(2)").fadeIn('fast');
+                    $("figure:eq(1)").fadeIn('fast');
                   });
-                  $("figure:eq(1)").fadeOut('fast', function(){
+                  $("figure:eq(2)").fadeOut('fast', function(){
                     $("figure:eq(3)").fadeIn('fast');
                   });
                 }
@@ -917,11 +958,11 @@
             else{
               if(scrolledTop){
               if($("#team").css('display') === 'block'){
-                $("figure:eq(2)").fadeOut('fast', function(){
-                  $("figure:eq(0)").fadeIn('fast');
+                $("figure:eq(1)").fadeOut('fast', function(){
+                  $("figure:eq(2)").fadeIn('fast');
                 });
                 $("figure:eq(3)").fadeOut('fast', function(){
-                  $("figure:eq(1)").fadeIn('fast');
+                  $("figure:eq(0)").fadeIn('fast');
                 });
               }
               else if($("#about-us").css('display') === 'block'){
@@ -937,7 +978,7 @@
             
       $("#startmenu").click(function(){
         var charms = $("#el").data('charms');
-       	charms.toggle();
+        charms.toggle();
      });
       /*$('#contact').on('hide.bs.modal', function (e) {
         if(!$(this).hasClass('hideModal')){
@@ -957,20 +998,20 @@
       });*/
       var count = 0;
       $("#Example").click(function(){
-      	min();
+        min();
       });
       function min(){
-      	if(count === 0){
-      		$(".window").hide('slow');
-      		count++;
-      	}
-      	else{
-      		$(".window").show('slow');
-      		count = 0;
-      	}
+        if(count === 0){
+          $(".window").hide('slow');
+          count++;
+        }
+        else{
+          $(".window").show('slow');
+          count = 0;
+        }
       }
       $('.btn-close').click(function(event) {
-      	$("#Example").hide();
+        $("#Example").hide();
       });
       $(".figure-img").hover(function(){
         $(this).siblings('figcaption').addClass('figcaption');

@@ -13,6 +13,10 @@ html, body{
   background-color: #530c0c;
   color: #fff;
 }
+#galleryThumbnails>.row>div{
+  box-shadow: 5px 5px 5px 5px #888888;
+}
+
 .loader{
   opacity: 0;
   overflow: hidden;
@@ -223,13 +227,12 @@ figcaption{
 .card-text{
   color: white;
 }
-/*.card:hover > .card-footer{
-  animation: cardfooter 0.2s ease-in 1 normal forwards;
+@media(max-width: 762px){
+  .heading{
+    font-size: 50px;
+    margin: -10px auto;
+  }
 }
-@keyframes cardfooter{
-  0%{height: 0%;}
-  100%{height: 100%;}
-}*/
 /*#overlay {
     position: fixed; 
     display: none; 
