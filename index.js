@@ -21,7 +21,7 @@ var transporter = nodemailer.createTransport({
 app.get('/', function(req, res, next){
 	res.sendFile((path.join(__dirname+'/comingsoon.html')));
 });
-app.get('/test/cyber', function(req, res, next){
+app.get('/test', function(req, res, next){
 	res.sendFile((path.join(__dirname+'/gdg.html')));
 });
 app.get('/contact', function(req, res, next){

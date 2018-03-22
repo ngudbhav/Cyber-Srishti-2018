@@ -1,10 +1,10 @@
 var j = require("jimp");
-j.read("gallery9.jpg", function(err, lenna){
+j.read("cyber srishti_logo3.png", function(err, lenna){
 console.log("executing");
 	if(err) throw err;
 	else{
-		lenna.resize(200,200)//720x1280//4x2.5
-		.write("gallery9-mini.jpg");
+		lenna.resize(600,400)//720x1280//4x2.5
+		.write("cyber srishti_logo3.png");
 		console.log("done");	
 		}
 });
