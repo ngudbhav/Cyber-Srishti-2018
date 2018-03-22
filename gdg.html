@@ -116,7 +116,7 @@
                   <!-- Image in background! -->
                 <!--  --></center></div>
                 <br>
-                <h5 style="text-align: center;word-spacing: 5px;line-height: 30px;">With the motto of stimulating technology, scientific tinking and innovation,<br> Jaypee Institute of Information Technology<br> presents the 5th edition of its annual technical festival- CYBER SRISHTI.<br> Hence, with an overwhelming student participation<br> and a reach of over 250 colleges,<br> Cyber Srishti has become one of the most established technical festival<br> organised among Delhi-NCR colleges.<br> Cyber Srishti thus endeavours to provide youth<br> with a platform to showcase their talents<br> and skills in cut-throat competitions,<br> displaying pioneering technology and research<br> from all over the country<br> and to interact with renowned personalities.</h5>
+                <h5 style="text-align: center;">With the motto of stimulating technology, scientific tinking and innovation,<br> Jaypee Institute of Information Technology<br> presents the 5th edition of its annual technical festival- CYBER SRISHTI.<br> Hence, with an overwhelming student participation<br> and a reach of over 250 colleges,<br> Cyber Srishti has become one of the most established technical festival<br> organised among Delhi-NCR colleges.<br> Cyber Srishti thus endeavours to provide youth<br> with a platform to showcase their talents<br> and skills in cut-throat competitions,<br> displaying pioneering technology and research<br> from all over the country<br> and to interact with renowned personalities.</h5>
       </div>
       <div id="showmap" class="h-100" style="display: none;">
         <div id="map" class="h-100">
@@ -731,13 +731,19 @@
                   <label for="phone">Phone Number</label>
                   <input type="number" name="aphone" class="form-control primary">
               </div>
-              College
-              Address
-
+              <div class="form-group">
+                <label for="college">College</label>
+                <input type="text" name="acollege" class="form-control secondary">
+              </div>
+              <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" name="address" class="form-control info">
+              </div>
               <button type="submit" class="btn-block btn btn-primary">Submit</button>
             </form>
           </div>
         </div>
+        <br><br>
       </div>
       <!-- row not included in team page -->
             <div id="team" class="h-100" style="display: none;">
@@ -915,35 +921,9 @@
                   </figure>
                 </div>
               </div>
+              <br><br>
             </div>
-
-
-                <!-- <div class="col-sm-3 offset-sm-3">
-                  <figure class="figure">
-                    <img src="../images/teams/aayush.jpg" class="figure-img rounded img-fluid">
-                    <figcaption class="figure-caption"><h5>A caption for the above image.</h5></figcaption>
-                  </figure>
-                  <figure class="figure" style="display: none;">
-                    <img src="../images/test1.jpg" class="figure-img rounded img-fluid">
-                    <figcaption class="figure-caption"><h5>A caption for the above image.</h5></figcaption>
-                  </figure>
-                </div>
-                <div class="col-sm-3">
-                  <figure class="figure">
-                    <img src="../images/test.jpg" class="figure-img rounded img-fluid">
-                    <figcaption class="figure-caption"><h5>A caption for the above image.</h5></figcaption>
-                  </figure>
-                  <figure class="figure" style="display: none;">
-                    <img src="../images/test1.jpg" class="figure-img rounded img-fluid">
-                    <figcaption class="figure-caption"><h5>A caption for the above image.</h5></figcaption>
-                  </figure>
-                  <figure class="figure" style="display: none;">
-                    <img src="../images/test1.jpg" class="figure-img rounded img-fluid">
-                    <figcaption class="figure-caption"><h5>A caption for the above image.</h5></figcaption>
-                  </figure>
-                </div> -->
-              <!-- <h1>Scroll up Please! Resize images using node and place!</h1> -->
-            </div>
+         </div>
                   
                   <!-- Loading bar half -->
   <div data-role="charms" data-position="left" id="el" class="charms" style="padding-right: 1%;padding-top: 1%;">
@@ -1179,41 +1159,6 @@
       $('.btn-close').click(function(event) {
         $("#Example").hide();
       });
-      /*$("#about-us, #about-us > span > *").click(function(){
-        $("#wallpaper").addClass('fadeOutBack');
-        setTimeout(function(){$("#wallpaper").css('display', 'none');}, 300)
-        $(".loader").addClass('loading');
-        *//*$("#wallpaper").css({
-          transform: 'translateZ(-3em) scale(0.6)',
-          opacity : 0,
-          transition: 'transform 0.5s ease-in-out, opacity 0.5s ease-in-out'
-        });
-        setTimeout(function(){$("#wallpaper").css('display', 'none');}, 500);
-        setTimeout(function(){
-          $(".loader").css({
-          transform: 'translateX(0)',
-          opacity: 1,
-          transition: 'transform 0.5s ease-in-out, opacity 0.5s ease-in-out' 
-          });
-        }, 550);
-        setTimeout(function(){
-          $(".loader").css({
-          transform: 'translateX(-300px)',
-          opacity: 0,
-          transition: 'transform 0.5s ease-in-out, opacity 0.5s ease-in-out' 
-          });
-        }, 1000);
-        setTimeout(function(){
-          $(".loader").css('display', 'none');
-        }, 1500)
-        setTimeout(function(){
-          $(".main-screen").css({
-            transform : 'translateX(0px) rotateY(0deg)',
-            opacity: 1,
-            transition: 'transform 0.5s ease-in-out, opacity 0.5 ease-in-out' 
-          });
-        }, 1500);*/
-     /* });*/
      $(".register").click(function(){
       $('#eventRegister').modal('show');
      });

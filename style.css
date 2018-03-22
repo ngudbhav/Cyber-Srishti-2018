@@ -112,8 +112,14 @@ figcaption{
   width: inherit;
   text-align: center;
 }
-h5{
-  font-size: 1.23em;
+#team>.container>div>div>figure{
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border: 0px solid #000000;
+  -webkit-box-shadow: 0px 0px 31px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 31px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 31px 0px rgba(0,0,0,0.75);
 }
 .figcaption{
   animation: figcaption 0.3s ease-in 1 normal forwards;
@@ -237,10 +243,20 @@ h5{
 .card-text{
   color: white;
 }
+h5{
+  font-size: 1.23em;
+  word-spacing: 5px;
+  line-height: 30px;
+}
 @media(max-width: 762px){
   .heading{
     font-size: 50px;
-    margin: -10px auto;
+    margin-left: -50%;
+  }
+  h5{
+    font-size: 0.8rem;
+    word-spacing: 5px;
+    line-height: 15px;
   }
 }
 /*#overlay {
