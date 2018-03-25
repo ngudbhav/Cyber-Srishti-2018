@@ -19,7 +19,7 @@ var transporter = nodemailer.createTransport({
     }
 });
 app.get('/', function(req, res, next){
-	res.sendFile((path.join(__dirname+'/gdg.html')));
+	res.sendFile((path.join(__dirname+'/comingsoon.html')));
 });
 app.get('/test', function(req, res, next){
 	res.sendFile((path.join(__dirname+'/gdg.html')));
@@ -42,7 +42,7 @@ app.get('/contact', function(req, res, next){
     	}
 	});
 });
-var server = (app).listen(app.get('port'), '172.16.110.64', function(){
+var server = (app).listen(app.get('port'), function(){
 	var host = server.address().address;
 	var port = server.address().port;
 	console.log("running\n");
