@@ -264,6 +264,9 @@ h5{
   word-spacing: 5px;
   line-height: 30px;
 }
+h1{
+  font-size: 3em;
+}
 .accomodation.heading{
   font-size: 100px; 
   width: 100%;
@@ -297,6 +300,9 @@ h5{
   }
   .heading{
     font-size: 50px;
+  }
+  h1{
+    font-size: 1em;
   }
   .accomodation.heading{
     font-size: 30px; 
@@ -348,5 +354,7 @@ h5{
     right: 0;
     bottom: 0;
     background-color: rgba(0,0,0,0.5); 
-    z-index: 12; 
+    z-index: 12;
+    color: white;
+    font-size: 40px;
 }
