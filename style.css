@@ -1,6 +1,11 @@
 .tile-wide{
   height: 80px;
   width: 140px;
+  font-size: ;
+}
+.tile-wide>span{
+  font-size: ;
+  top: ;
 }
 html, body{
   margin: 0;
@@ -18,7 +23,9 @@ html, body{
 #galleryThumbnails>.row>div{
   box-shadow: 5px 5px 5px 5px #888888;
 }
-
+#galleryCarousel>.carousel-inner>.carousel-item>img{
+  /*height: 90vh;*/
+}
 .loader{
   opacity: 0;
   overflow: hidden;
@@ -66,7 +73,7 @@ html, body{
 }
 @keyframes jumpwinabout{
   0%{transform: translateX(0vw) translateY(0vh) scale(1,1);}
-  100%{transform: translateX(56vw) translateY(33vh) scale(10, 8.2) ;}
+  100%{transform: translateX(56vw) translateY(35vh) scale(10, 8.2) ;}
 }
 @keyframes jumpwinevent{
   0%{transform: translateX(0vw) translateY(0vh) scale(1,1);}
@@ -108,9 +115,18 @@ html, body{
   100%{transform:rotateY(0deg) translate(0em); opacity:1}
 }
 figcaption{
-  opacity: 0;
+  opacity: 1;
   width: inherit;
   text-align: center;
+  color: white !important;
+  background-color: black;
+}
+figure>img:hover{
+  transform: scale(1.1,1.1);
+  transition: transform 1s ease-in;
+}
+figure{
+  margin-left: ;
 }
 #team>.container>div>div>figure{
   border-radius: 10px 10px 10px 10px;
@@ -121,9 +137,9 @@ figcaption{
   -moz-box-shadow: 0px 0px 31px 0px rgba(0,0,0,0.75);
   box-shadow: 0px 0px 31px 0px rgba(0,0,0,0.75);
 }
-.figcaption{
+/*.figcaption{
   animation: figcaption 0.3s ease-in 1 normal forwards;
-}
+}*/
 @keyframes figcaption{
   0%{transform: translateY(0em); color: black; background-color: ;opacity: 0;}
   100%{transform: translateY(-4em); color: white; background-color: black;opacity: 1;}
@@ -187,10 +203,10 @@ figcaption{
   -webkit-background-clip: text;
   font-weight: bold;
   font-size: 100px;
-  font-family: arial, helvetica;
-  width: 600px;
+  width: 100%;
   margin: -20px auto;
   text-align: center;
+  font-family: 'Anton', sans-serif;
 }
 .card{
   background-color: rgba(0, 0, 0, 0.8);
@@ -248,18 +264,81 @@ h5{
   word-spacing: 5px;
   line-height: 30px;
 }
+.accomodation.heading{
+  font-size: 100px; 
+  width: 100%;
+}
+#accomodation>.row{
+  padding: 3%;
+}
+.text{
+  display: inline-block;
+}
 @media(max-width: 762px){
+  @keyframes jumpwinabout{
+    0%{transform: translateX(0vw) translateY(0vh) scale(1,1);}
+    100%{transform: translateX(68vw) translateY(40vh) scale(3, 6.2) ;}
+  }
+  @keyframes jumpwinevent{
+    0%{transform: translateX(0vw) translateY(0vh) scale(1,1);}
+    100%{transform: translateX(68vw) translateY(20vh) scale(3, 6.2) ;}
+  }
+  @keyframes jumpwingallery{
+    0%{transform: translateX(0vw) translateY(0vh) scale(1,1);}
+    100%{transform: translateX(68vw) translateY(5vh) scale(3, 6.2) ;}
+  }
+  @keyframes jumpwinteam{
+    0%{transform: translateX(0vw) translateY(0vh) scale(1,1);}
+    100%{transform: translateX(68vw) translateY(-14.5vh) scale(3, 6.2) ;}
+  }
+  @keyframes jumpwinaccomo{
+    0%{transform: translateX(0vw) translateY(0vh) scale(1,1);}
+    100%{transform: translateX(68vw) translateY(-26vh) scale(3, 6.2) ;}
+  }
   .heading{
     font-size: 50px;
-    margin-left: -50%;
+  }
+  .accomodation.heading{
+    font-size: 30px; 
   }
   h5{
     font-size: 0.8rem;
     word-spacing: 5px;
-    line-height: 15px;
+    line-height: 5vh;
+  }
+  #galleryCarousel>.carousel-inner>.carousel-item>img{
+  height: 40vh;
+  }
+  #accomodation>.row{
+    padding: 7%;
+  }
+  .text{
+    display: none
+  }
+  figure{
+    margin-left: 8%;
   }
 }
-/*#overlay {
+@media (max-width: 400px){
+  h5{
+    font-size: 0.8rem;
+    word-spacing: 5px;
+    line-height: 3vh;
+  }
+  .tile-wide{
+    height: 60px;
+    width: 100px;
+    font-size: 10px;
+  }
+  .tile-wide>span{
+    /*top: -20%;*/
+    font-size: 20px !important;
+  }
+  #galleryCarousel>.carousel-inner>.carousel-item>img{
+  height: 40vh;
+  }
+}
+#overlay {
     position: fixed; 
     display: none; 
     width: 100%; 
@@ -268,6 +347,6 @@ h5{
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,0.8); 
-    z-index: 2; 
-}*/
+    background-color: rgba(0,0,0,0.5); 
+    z-index: 12; 
+}

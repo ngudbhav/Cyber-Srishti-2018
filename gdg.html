@@ -3,31 +3,35 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, user-scalable=0;">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src 'self' 'unsafe-inline' *; img-src * data: 'unsafe-inline'">
     <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
     <!-- Metro 4 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href='http://fonts.googleapis.com/css?family=Unkempt' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
     <link rel="stylesheet" type="text/css" href="../style.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script type="text/javascript">
       function participants(value){
-          if(value === 1){
-            $('#participant1').hide();$('#participant2').hide();$('#participant3').hide();$('#participant4').hide();
+        console.log(value);
+          if(value == 1){
+            $('#participant1').show();$('#participant2').hide();$('#participant3').hide();$('#participant4').hide();
           }
-          else if(value === 2){
+          else if(value == 2){
             $('#participant2').show();$('#participant3').hide();$('#participant4').hide();
           }
-          else if(value === 3){
+          else if(value == 3){
             $('#participant2').show();$('#participant3').show();$('#participant4').hide();
           }
-          else if(value === 4){
+          else if(value == 4){
             $('#participant2').show();$('#participant3').show();$('#participant4').show();
           }
         }
         function college(value){
+          console.log(value);
           if(value === 2){
             $("#collegename").fadeIn('fast');
           }
@@ -37,13 +41,13 @@
         }
     </script>
   </head>
-  <body>
+  <body onhashchange="defineloc();">
     <div class="preloader container-fluid" style="background-color: black;padding: 0;height: 100%;">
       <br><br><br>
       <div class="row">
         <div class="col-sm-12">
           <center>
-            <img src="../images/cyber srishti_logo3.png">
+            <img src="../images/cyber srishti_logo.png" >
           </center>
         </div>
       </div>
@@ -108,15 +112,15 @@
       </div>
     </div> -->
 <div class="container-fluid" style="padding: 0%;">
-  <div id="about-us" style="height: inherit;background-color:#FF6B71;color: white;display: none; ">
+  <div id="about-us" style="height: inherit;background: url('images/college.jpg');background-repeat: no-repeat;background-size: cover;color: white;display: none;">
       <div class="container h-100" id="showabout">
         <br><br>
-          <div class="heading">
-                <center>About Us
+                <center><div class="heading">About Us
                   <!-- Image in background! -->
-                <!--  --></center></div>
+                <!--  --></div>(Scroll down to locate us)</center>
+                
+                <h5 style="text-align: center;">With the motto of stimulating technology, scientific thinking and innovation,<br> Jaypee Institute of Information Technology<br> presents the 5th edition of its annual technical festival- CYBER SRISHTI.<br> Hence, with an overwhelming student participation<br> and a reach of over 250 colleges,<br> Cyber Srishti has become one of the most established technical festival<br> organised among Delhi-NCR colleges.<br> Cyber Srishti thus endeavours to provide youth<br> with a platform to showcase their talents<br> and skills in cut-throat competitions,<br> displaying pioneering technology and research<br> from all over the country<br> and to interact with renowned personalities.<br><br></h5>
                 <br>
-                <h5 style="text-align: center;">With the motto of stimulating technology, scientific tinking and innovation,<br> Jaypee Institute of Information Technology<br> presents the 5th edition of its annual technical festival- CYBER SRISHTI.<br> Hence, with an overwhelming student participation<br> and a reach of over 250 colleges,<br> Cyber Srishti has become one of the most established technical festival<br> organised among Delhi-NCR colleges.<br> Cyber Srishti thus endeavours to provide youth<br> with a platform to showcase their talents<br> and skills in cut-throat competitions,<br> displaying pioneering technology and research<br> from all over the country<br> and to interact with renowned personalities.</h5>
       </div>
       <div id="showmap" class="h-100" style="display: none;">
         <div id="map" class="h-100">
@@ -125,19 +129,13 @@
     </div>
   <div class="row">
     <div class="col-sm-12">
-      <video autoplay height="100%" width="100%" loop style="position: relative;z-index: 10;">
+      <video autoplay height="100%" width="100%" loop style="position: relative;z-index: 10;display: none;">
         <source src="../images/mymovie.mp4" type="video/mp4">
       </video>
-      <!-- <div class="container-fluid" id="showmap">
-        <div>
-          <div class="card">
-            <div class="card-body">
-              <div id="map" style="width: 100%;height: 500px;">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
+      <div id="overlay">
+        <!-- <br><br><br><br><br><br>
+ -->        <!-- <div data-role="countdown" data-days="1" data-hours="2" data-minutes="3" data-seconds="4" data-cls-zero="bg-black fg-light" data-cls-hours="bg-red fg-white" data-cls-minutes="bg-green fg-white" data-cls-seconds="bg-blue fg-white"></div> -->
+      </div>
     </div>
   </div>
   <div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="Contact-Us" aria-hidden="true">
@@ -172,6 +170,66 @@
     </div>
   </div>
   <!-- Form for Registration -->
+  <!-- sponsors -->
+  <div class="modal fade" id="sponsors" tabindex="-1" role="dialog" aria-labelledby="Contact-Us" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="sponsorsTitle">Sponsors</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-sm-1 offset-sm-4">
+              <img src="/images/sponsors/1.png" alt="sponsor1">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-1 offset-sm-3">
+              <img src="/images/sponsors/2.png" alt="sponsor2">
+            </div>
+            <div class="col-sm-1 offset-sm-2">
+              <img src="/images/sponsors/3.png" alt="sponsor3">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-1 offset-sm-3">
+              <img src="/images/sponsors/4.png" alt="sponsor2">
+            </div>
+            <div class="col-sm-1 offset-sm-2">
+              <img src="/images/sponsors/5.png" alt="sponsor3">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-1 offset-sm-3">
+              <img src="/images/sponsors/6.png" alt="sponsor2">
+            </div>
+            <div class="col-sm-1 offset-sm-2">
+              <img src="/images/sponsors/7.png" alt="sponsor3">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-1 offset-sm-3">
+              <img src="/images/sponsors/8.png" alt="sponsor2">
+            </div>
+            <div class="col-sm-1 offset-sm-2">
+              <img src="/images/sponsors/9.png" alt="sponsor3">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-1 offset-sm-4">
+              <img src="/images/sponsors/10.png">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end -->
   <div class="modal fade" id="eventRegister" tabindex="-1" role="dialog" aria-labelledby="Contact-Us" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content">
@@ -196,37 +254,11 @@
               <option class="fg-cyan" value="1">One</option>
               <option class="text-bold fg-red" value="2">Two</option>
               <option class="fg-green" value="3">Three</option>
-              <option class="fg-cyan" value="4">Four</option>
+              <option class="text-bold fg-cyan" value="4">Four</option>
             </select><br>
-            <div id="participant2" style="display: none;">
-              <div class="form-group">
-                <label for="name">Full-Name </label>
-                <input type="text" name="name" class="form-control alert" id="twname">
-              </div>
-              <div class="form-group">
-                <label for="enroll">Enrollment</label>
-                <input type="enroll" name="enroll" class="form-control primary" id="twenroll">
-              </div>
-            </div>
-            <div id="participant3" style="display: none;">
-              <div class="form-group">
-                <label for="name">Full-Name </label>
-                <input type="text" name="name" class="form-control yellow" id="thname">
-              </div>
-              <div class="form-group">
-                <label for="enroll">Enrollment</label>
-                <input type="text" name="enroll" class="form-control info" id="thenroll">
-              </div>
-            </div>
-            <div id="participant4" style="display: none;">
-              <div class="form-group">
-                <label for="name">Full-Name </label>
-                <input type="text" name="name" class="form-control yellow" id="fname">
-              </div>
-              <div class="form-group">
-                <label for="enroll">Enrollment</label>
-                <input type="text" name="enroll" class="form-control dark" id="fenroll">
-              </div>
+            <div class="form-group">
+              <label for="enroll">Enrollment</label>
+              <input type="text" name="enroll" class="form-control secondary" id="enroll">
             </div>
             <div class="form-group">
               <label for="name">Full-Name </label>
@@ -237,10 +269,6 @@
               <input type="email" name="email" class="form-control primary" id="onemail">
             </div>
             <div class="form-group">
-              <label for="enroll">Enrollment</label>
-              <input type="text" name="enroll" class="form-control secondary" id="enroll">
-            </div>
-            <div class="form-group">
               <label for="phone">Phone Number</label>
               <input type="text" name="phone" class="form-control success" id="phone">
             </div>
@@ -249,9 +277,31 @@
               <option class="text-bold" disabled selected>Select year</option>
               <option class="fg-cyan">1st year</option>
               <option class="text-bold fg-red">2nd year</option>
-              <option selected class="fg-green">3rd year</option>
-              <option selected class="fg-green">4th year</option>
+              <option class="fg-green">3rd year</option>
+              <option class="text-bold fg-green">4th year</option>
             </select>
+
+            <div id="participant2" style="display: none;">
+              <div class="form-group">
+                Participant 2
+                <label for="name">Enrollment/Reg. ID</label>
+                <input type="text" name="name" class="form-control alert" id="twname">
+              </div>
+            </div>
+            <div id="participant3" style="display: none;">
+              <div class="form-group">
+                Participant 3
+                <label for="name">Enrollment/Reg. ID</label>
+                <input type="text" name="name" class="form-control yellow" id="thname">
+              </div>
+            </div>
+            <div id="participant4" style="display: none;">
+              <div class="form-group">
+              Participant 4
+                <label for="name">Enrollment/Reg. ID</label>
+                <input type="text" name="name" class="form-control yellow" id="fname">
+              </div>
+            </div>
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-primary">Submit</button>
@@ -265,7 +315,11 @@
         <div class="col-sm-12">
           <div class="container">
             <br>
-            <center><div class="heading">Events</div></center>
+            <div class="row">
+              <div class="col-sm-12">
+                <center><div class="heading">Events</div></center>
+              </div>
+            </div>
             <hr style="height: 10px; width: 30%;background-color: black;">
             <br>
             <div class="row">
@@ -656,18 +710,18 @@
           </div>
           <br><br><br>
         </div>
-        <div id="galleryCarousel" class="carousel slide" data-ride="carousel" data-interval="3000" data-pause="false" style="padding: 1%;height: 85%;display: none;box-shadow: 10px 10px 10px 10px #888888;padding-bottom: 3%;">
+        <div id="galleryCarousel" class="carousel slide" data-ride="carousel" data-interval="3000" data-pause="false" style="padding: 1%;display: none;box-shadow: 10px 10px 10px 10px #888888;padding-bottom: 3%;">
           <br><div style="width: 100%;z-index: 20;"><i class="fas fa-times fa-3x place-right"></i></div>
           <br>
-          <div class="carousel-inner" style="height: inherit;">
+          <div class="carousel-inner" style="height: ;">
             <div class="carousel-item">
-              <img class="d-block w-100" src="../images/gallery1.JPG" class="img-fluid">
+              <img class="d-block w-100" src="../images/gallery1.JPG" >
             </div>
             <div class="carousel-item">
-              <img class="d-block w-100" src="../images/gallery2.JPG" class="img-fluid">
+              <img class="d-block w-100" src="../images/gallery2.JPG" >
             </div>
             <div class="carousel-item">
-              <img class="d-block w-100" src="../images/gallery3.JPG" class="img-fluid">
+              <img class="d-block w-100" src="../images/gallery3.JPG" >
             </div>
             <div class="carousel-item">
               <img class="d-block w-100" src="../images/gallery4.JPG" class="img-fluid">
@@ -679,7 +733,7 @@
               <img class="d-block w-100" src="../images/gallery6.JPG" class="img-fluid">
             </div>
             <div class="carousel-item">
-              <img class="d-block w-100" src="../images/gallery7.jpeg" class="img-fluid">
+              <img class="d-block w-100" src="../images/gallery7.jpg" class="img-fluid">
             </div>
             <div class="carousel-item">
               <img class="d-block w-100" src="../images/gallery8.JPG" class="img-fluid">
@@ -700,9 +754,13 @@
         </div>
       </div>
       <div id="accomodation" class="h-100" style="display: none;">
-        <center><div class="heading" style="width: 700px;">Accomodation</div></center>
-        <br>
-        <div class="row" style="padding: 3%;">
+        <div class="row">
+          <div class="col-sm-12">
+            <br>
+            <center><div class="heading accomodation">Accomodation</div></center>
+          </div>
+        </div>
+        <div class="row">
           <div class="col-sm-5" style="border: 5px solid #888888;padding: 1%;box-shadow: 5px 5px 5px 5px #888888;">
             <p>
               The accommodation will be given in groups. The group which is registered below might be given accommodation together and needs to pay the fee together.
@@ -714,11 +772,13 @@
               Boys and girls will be given accommodation in different hostel.
             </p>
             <p>
-              You will receive a confirmation mail of payment within 24 hours. Mail your teamID, transaction ID, name, amount to <a href="mailto:ngudbhav05@hotmail.com">ngudbhav05@hotmail.com</a>, if no confirmation mail received. 
+              You will receive a confirmation mail of payment within 24 hours. Mail your teamID, transaction ID, name, amount to <a href="mailto:info@cybersrishti.com">info@cybersrishti.com</a>, if no confirmation mail received. 
             </p>
           </div>
           <div class="col-sm-5 offset-sm-2" style="border: 5px solid #888888;padding: 1%;box-shadow: 5px 5px 5px 5px #888888;">
             <form>
+              <center>Fill this Form to Reach us!</center>
+              <br>
               <div class="form-group">
                 <label for="name">Full Name</label>
                 <input type="text" name="aname" class="form-control alert">
@@ -729,7 +789,7 @@
               </div>
               <div class="form-group">
                   <label for="phone">Phone Number</label>
-                  <input type="number" name="aphone" class="form-control primary">
+                  <input type="text" name="aphone" class="form-control primary">
               </div>
               <div class="form-group">
                 <label for="college">College</label>
@@ -741,9 +801,10 @@
               </div>
               <button type="submit" class="btn-block btn btn-primary">Submit</button>
             </form>
+            <br><br>
           </div>
         </div>
-        <br><br>
+        <br><br><br><br>
       </div>
       <!-- row not included in team page -->
             <div id="team" class="h-100" style="display: none;">
@@ -755,28 +816,34 @@
                 <div class="col-sm-4 offset-sm-4">
                   <figure class="figure">
                     <img src="../images/sg.jpg" class="figure-img rounded img-fluid">
-                    <figcaption class="figure-caption figcaption"><h5>A caption for the above image.</h5></figcaption>
+                    <figcaption class="figure-caption figcaption"><h5>Prof. Sanjay Goel<br>HOD CSE &amp; IT Dept.</h5></figcaption>
                     <!-- Photo size Reduce -->
                   </figure>
                 </div>
               </div>
               <div class="row">
-                <div class="col-sm-2 offset-sm-2">
+                <div class="col-sm-2 offset-sm-1">
                   <figure class="figure">
                     <img src="../images/mkt1.jpg" class="figure-img rounded img-fluid">
-                    <figcaption class="figure-caption figcaption"><h5>A caption for the above image.</h5></figcaption>
+                    <figcaption class="figure-caption figcaption"><h5>Dr. Manish Kumar Thakur<br>CSE &amp; IT Dept.</h5></figcaption>
                   </figure>
                 </div>
                 <div class="col-sm-2 offset-sm-1">
                   <figure class="figure">
                     <img src="../images/tkt.jpg" class="figure-img rounded img-fluid">
-                    <figcaption class="figure-caption figcaption"><h5>A caption for the above image.</h5></figcaption>
+                    <figcaption class="figure-caption figcaption"><h5>Dr. Tribhuwan Kumar Tewari<br>CSE &amp; IT Dept.</h5></figcaption>
                   </figure>
                 </div>
                 <div class="col-sm-2 offset-sm-1">
                   <figure class="figure">
                     <img src="../images/shamim.jpg" class="figure-img rounded img-fluid">
-                    <figcaption class="figure-caption figcaption"><h5>A caption for the above image.</h5></figcaption>
+                    <figcaption class="figure-caption figcaption"><h5>Dr. Shamim Akhter<br>ECE Dept.</h5></figcaption>
+                  </figure>
+                </div>
+                <div class="col-sm-2 offset-sm-1">
+                  <figure class="figure">
+                    <img src="../images/ashwini.jpg" class="figure-img rounded img-fluid">
+                    <figcaption class="figure-caption figcaption"><h5>Dr. Ashwini Mathur<br> Biotech Dept.</h5></figcaption>
                   </figure>
                 </div>
               </div>
@@ -841,7 +908,7 @@
                 </div>
                 <div class="col-sm-3">
                   <figure class="figure">
-                    <img src="../images/teams/srijin.jpg" class="figure-img rounded img-fluid" alt="Srijin Srivastava">
+                    <img src="../images/teams/srijan.png" class="figure-img rounded img-fluid" alt="Srijin Srivastava">
                     <figcaption class="figure-caption figcaption"><h5>Srigin Srivastava<br>8700917364</h5></figcaption>
                   </figure>
                 </div>
@@ -953,15 +1020,15 @@
   <div data-role="charms" data-position="bottom" id="start" class="charms">
       <div style="width: 100%;" class="d-flex flex-justify-between">
       
-      <button class="button large" id="startmenu"><span class="icon mif-apps"></span> Start</button>
-      <div><button class="button large" id="contact-tile" onclick="$('#contact').modal('toggle');"><span class="icon mif-phone"></span> Contact-Us!</button>
-      <button class="button large" id="sponsor-tile"> Sponsors</button></div>
-        <div style="right: 1%;font-size: 1rem;"><span class="mif-copyright mif-3x fg-blue"></span>&nbsp;Cyber-Srishti 2018</div>
-     </div>
-
-    
+      <button class="btn btn-info btn-lg" id="startmenu" style="background-color: #530C0C;"><span class="icon mif-apps"></span> Start</button>
+        <div style="right: 1%;font-size: 1rem;padding-top: 0.4%;">
+          <!-- <span class="mif-copyright mif-3x fg-blue"></span>&nbsp;Cyber-Srishti 2018&nbsp;&nbsp; -->
+          <button class="btn btn-warning" id="desktop" style="padding-top:1%;"><span class="icon"><i class="fas fa-desktop"></i>&nbsp;<span class="text">Desktop</span></span></button>
+          <button class="btn btn-warning" id="contact-tile" style="padding-top:1%;" onclick="$('#contact').modal('toggle');$('#sponsors').modal('hide')"><span class="icon mif-phone"></span>&nbsp;<span class="text">Contact-Us!</span></button>
+          <button class=" btn btn-warning" style="padding-top:1%;"  id="sponsor-tile" onclick="$('#contact').modal('hide');$('#sponsors').modal('toggle');"> <i class="far fa-handshake"></i>&nbsp;<span class="text">Sponsors</span></button>
+        </div>
+      </div>
   </div>
-</div>
     <!-- jQuery first, then Metro UI JS -->
     <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -983,6 +1050,37 @@
       };
     </script>
     <script type="text/javascript">
+      if($(window).width()<500){
+        $(".preloader>div>div>center>img").attr('src', '../images/soon-mini1.jpg');
+        $(".preloader>div>div>center>img").attr('class', 'img-fluid');
+      }
+      $("video").bind('timeupdate', pausingFunction);
+      function pausingFunction(){
+        if(this.currentTime>11){
+          this.pause();
+        }
+      }
+      $(".btn-warning").hover(function(){
+        $(this).css('background-color', 'white');
+      });
+      $(".btn-warning").mouseout(function(){
+        $(this).css('background-color', '');
+      });
+      function defineloc(){
+        console.log(window.location.hash);
+        if(window.location.hash === "#events"){
+          $("video").hide();
+          $("body").css('height', 'auto');
+          $("html").css('height', 'auto');      
+          $("#overlay").hide();
+          $("#about-us").css('display', 'none');
+          $("#gallery").css('display', 'none');
+          $("#team").css('display', 'none');
+          $("#events").css('display', 'block');
+          $("#events").css('opacity', '1');
+          $("#accomodation").css('display', 'none');
+        }
+      }
       $(document).ready(function() {
         initMap();
           var charms = $("#start").data('charms');
@@ -1010,15 +1108,22 @@
           $(".fa-times").click(galleryFunction);
             $(".large>div").bind('click', function(){
               $("video").hide();
-             /* $("#overlay").hide();
-
-              */var charms = $("#el").data('charms');
+              $("body").css('height', 'auto');
+              $("html").css('height', 'auto');
+              $('#contact').modal('hide');
+              $('#sponsors').modal('hide');
+              $("#overlay").hide();
+              var charms = $("#el").data('charms');
               charms.toggle();
               galleryFunction();
               $(this).addClass('jumpwin8');
               var element = $(this);
+              $("body").css('overflow-y', 'auto');
               if(element.attr('id') === 'about-tile'){
+                    window.location = "#about-us";
+                    $("body").css('overflow-y', 'scroll');
                     $("body").css('height', '100%');
+                    $("html").css('height', '100%');
                     $("#events").css('display', 'none');
                     $("#gallery").css('display', 'none');
                     $("#team").css('display', 'none');
@@ -1029,7 +1134,7 @@
                     $("#accomodation").css('display', 'none');
                   }
                   else if(element.attr('id') === 'event-tile'){
-                    $("body").css('height', 'auto');
+                    window.location = "#events";
                     $("#about-us").css('display', 'none');
                     $("#gallery").css('display', 'none');
                     $("#team").css('display', 'none');
@@ -1038,7 +1143,7 @@
                     $("#accomodation").css('display', 'none');
                   }
                   else if(element.attr('id') === 'team-tile'){
-                    $("body").css('height', '100%');
+                    window.location = "#team";
                     $("#about-us").css('display', 'none');
                     $("#gallery").css('display', 'none');
                     $("#team").addClass('open-page');
@@ -1048,7 +1153,7 @@
                     $("#accomodation").css('display', 'none');
                   }
                   else if(element.attr('id') === 'hospitality-tile'){
-                    $("body").css('height', '100%');
+                    window.location = "#accomodation";
                     $("#about-us").css('display', 'none');
                     $("#events").css('display', 'none');
                     $("#accomodation").addClass('open-page');
@@ -1057,7 +1162,7 @@
                     $("#accomodation").css('display', 'block');
                   }
                   else if(element.attr('id') === 'gallery-tile'){
-                    $("body").css('height', 'auto');
+                    window.location = "#gallery";
                     $("#about-us").css('display', 'none');
                     $("#events").css('display', 'none');
                     $("#gallery").addClass('open-page');
@@ -1065,7 +1170,24 @@
                     $("#team").css('display', 'none');
                     $("#accomodation").css('display', 'none');
                   }
-              setTimeout(function(){$(".large>div").removeClass('jumpwin8');}, 4200);
+              setTimeout(function(){$(".large>div").removeClass('jumpwin8');}, 3200);
+            });
+            $("#desktop").click(function(){
+              $("#about-us").css('display', 'none');
+              $("#gallery").css('display', 'none');
+              $("#events").css('display', 'none');
+              $("#team").css('display', 'none');
+              $("#accomodation").css('display', 'none');
+              $("video").show();
+              $("video").currentTime = 0;
+              /*$("video").play();*/
+              $("#overlay").show();
+            });
+            $(document).click(function(e){
+              if($("#el")[0] != e.target && $("#startmenu")[0] != e.target){
+                var charms = $("#el").data('charms');
+                charms.close();
+              }
             });
             /*if($("you id").is('visible')){
     //do it
@@ -1081,21 +1203,19 @@
         setTimeout(function(){
           $(".preloader").css('display', 'none');
           $(".container-fluid").addClass('h-100');
+          $("html,body").css('height', 'auto');
+          $("video").fadeIn('fast');
+          $("#overlay").show();
           $("#main-screen").css({
             opacity: 1,
             transition : 'opacity 1s'
           });
           $("#overlay").css('display', 'block');;
         }, 4500);
-        /*setTimeout(function(){
-          var height = $(document).height();
-          $("#wallpaper").css('height', height);
-          */
-        /*}, 5500);*/
       });
               var i = 0;
               var scrolledTop = false;
-              $(window).scroll(function(e){
+              $(document).scroll(function(e){
                 e.preventDefault();
                 e.stopPropagation();
                 var lastPosition = $(this).scrollTop();
