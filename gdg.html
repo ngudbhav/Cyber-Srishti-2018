@@ -6,11 +6,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=0">
     <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src 'self' 'unsafe-inline' *; img-src * data: 'unsafe-inline'">
+    <meta name="Description" content="Cyber-Srishti Website for JIIT for the year 2018. This Event will be held on 21st April and 22nd April">
+    <meta name="Keywords" content="Cyber-Srishti-2018, Cyber-Srishti, JIIT, Cyber, Srishti, 2018">
     <title>Cyber-Srishti-2018@JIIT</title>
     <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
     <!-- Metro 4 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href='http://fonts.googleapis.com/css?family=Unkempt' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Unkempt' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
@@ -24,12 +26,16 @@
         noOfParticipants = value
           if(value == 1){
             $('#participant1').show();$('#participant2').hide();$('#participant3').hide();$('#participant4').hide();
+            $('#participant2>.form-group>input').val('');$('#participant3>.form-group>input').val('');$('#participant4>.form-group>input').val('');
           }
           else if(value == 2){
             $('#participant2').show();$('#participant3').hide();$('#participant4').hide();
+            $('#participant3>.form-group>input').val('');$('#participant4.form-group>input').val('');
+
           }
           else if(value == 3){
             $('#participant2').show();$('#participant3').show();$('#participant4').hide();
+            $('#participant4>.form-group>input').val('');
           }
           else if(value == 4){
             $('#participant2').show();$('#participant3').show();$('#participant4').show();
@@ -38,11 +44,13 @@
         function college(value){
           isJIIT = value;
           if(value == 3){
-            $("#collegename").fadeIn('fast');
+            $("#onenrollc").hide();
+            $("#collegeField").fadeIn('fast');
           }
           else{
+            $("#onenrollc").show();
             $("#collegename").val('');
-            $("#collegename").fadeOut('fast');
+            $("#collegeField").fadeOut('fast');
           }
         }
         function year(value){
@@ -102,17 +110,23 @@
     </div>
   <div class="row">
     <div class="col-sm-12">
-      <video height="100%" width="100%" style="position: relative;z-index: 10;display: none;">
-        <!-- <source src="../images/mymovie.webm" type="video/wbem"> -->
-          <source src="../images/mymovie.mp4" type="video/mp4">
-          <source src="../images/mymovie.ogv" type="video/ogv">
-          <img src="../images/backup.png" title="Your browser does not support the <video> tag" />
+      <video autoplay height="100%" width="100%" poster="video/mymovie.jpg" title="Cyber-Srishti" style="position: relative;z-index: 10;display: none;">
+        <source src="video/mymovie.webm" type="video/webm" />
+        <source src="video/mymovie.m4v" type="video/mp4" />
+        <object type="application/x-shockwave-flash" data="video/flashfox.swf" width="100%" height="100%" style="position:relative;">
+          <param name="movie" value="video/flashfox.swf" />
+          <param name="allowFullScreen" value="true" />
+          <param name="flashVars" value="autoplay=true&amp;controls=false&amp;fullScreenEnabled=false&amp;posterOnEnd=true&amp;loop=false&amp;poster=video/mymovie.jpg&amp;src=mymovie.m4v" />
+          <embed src="video/flashfox.swf" width="100%" height="100%" style="position:relative;"  flashVars="autoplay=true&amp;controls=false&amp;fullScreenEnabled=false&amp;posterOnEnd=true&amp;loop=false&amp;poster=video/mymovie.jpg&amp;src=mymovie.m4v"  allowFullScreen="true" wmode="transparent" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer_en" />
+          <img alt="Cyber-Srishti" src="video/mymovie.jpg" style="position:absolute;left:0;" width="100%" title="Video playback is not supported by your browser" />
+        </object>
       </video>
       <div id="overlay">
             <center>We are coming!
             <div class="time">
               <span id="days" class="btn btn-lg" style="background-color: #60302F;"></span><span class="colon">:</span><span id="hours" class="btn btn-lg" style="background-color: #60302F;"></span><span class="colon">:</span><span id="minutes" class="btn btn-lg" style="background-color: #60302F;"></span><span class="colon">:</span><span id="seconds" class="btn btn-lg" style="background-color: #60302F;"></span>
-            </div></center>
+            </div>
+          </center>
         </div>
     </div>
   </div>
@@ -159,7 +173,41 @@
           </button>
         </div>
         <div class="modal-body">
-          <h2>Coming Soon!</h2>
+          <div class="row">
+            <div class="col-sm-6">
+              <img src="/images/sponsors/2.jpg">
+            </div>
+            <div class="col-sm-6">
+              <img src="/images/sponsors/du beat.jpg">
+            </div>
+          </div>
+          <br><br>
+          <div class="row">
+            <div class="col-sm-6">
+              <img src="/images/sponsors/DU-Khabar-Logo-2.png">
+            </div>
+            <div class="col-sm-6">
+              <img src="/images/sponsors/festpav.png">
+            </div>
+          </div>
+          <br><br>
+          <div class="row">
+            <div class="col-sm-6">
+              <img src="/images/sponsors/FB_IMG_15236203810421.jpg">
+            </div>
+            <div class="col-sm-6">
+              <img src="/images/sponsors/haristo1.png">
+            </div>
+          </div>
+          <br><br>
+          <div class="row">
+            <div class="col-sm-6">
+              <img src="/images/sponsors/FB_IMG_15236203651121.jpg">
+            </div>
+            <div class="col-sm-6">
+              <img src="/images/sponsors/INTERNITY_LOGO1.png">
+            </div>
+          </div>
         </div>
         <div class="modal-footer">
         </div>
@@ -185,7 +233,10 @@
               <option class="fg-green" value="3">Others</option>
             </select>
             <br>
-            <input type="text" name="college" style="display: none;" id="collegename">
+            <div class="form-group" id="collegeField" style="display: none;">
+              <label for="college">Enter Your college</label>
+              <input type="text" name="college" id="collegename">
+            </div>
             <select data-role="select" data-on-change="participants(this.value)" id="numberSelect">
               <option class="text-bold" selected disabled>No. of Participants</option>
               <option class="fg-cyan" value="1">One</option>
@@ -193,7 +244,7 @@
               <option class="fg-green" value="3">Three</option>
               <option class="text-bold fg-cyan" value="4">Four</option>
             </select><br>
-            <div class="form-group">
+            <div class="form-group" id="onenrollc">
               <label for="enroll">Enrollment</label>
               <input type="text" name="enroll" class="form-control secondary" id="onenroll">
             </div>
@@ -221,21 +272,21 @@
             <div id="participant2" style="display: none;">
               <div class="form-group">
                 Participant 2
-                <label for="name">Enrollment/Reg. ID</label>
+                <label for="name">Enrollment/Phone Number</label>
                 <input type="text" name="name" class="form-control alert" id="twenroll">
               </div>
             </div>
             <div id="participant3" style="display: none;">
               <div class="form-group">
                 Participant 3
-                <label for="name">Enrollment/Reg. ID</label>
+                <label for="name">Enrollment/Phone Number</label>
                 <input type="text" name="name" class="form-control yellow" id="thenroll">
               </div>
             </div>
             <div id="participant4" style="display: none;">
               <div class="form-group">
               Participant 4
-                <label for="name">Enrollment/Reg. ID</label>
+                <label for="name">Enrollment/Phone Number</label>
                 <input type="text" name="name" class="form-control yellow" id="fenroll">
               </div>
             </div>
@@ -267,7 +318,7 @@
                     <div class="overlay">
                       <div class="overlayContent"><div><button data-value="1" type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
-                        <div><a href="/Events/Aerated run.pdf"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
+                        <div><a href="/Events/Aerated run.pdf" target = "_blank"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
                         </div></div>
                     </div>
                     <div class="card-title">
@@ -287,7 +338,7 @@
                     <div class="overlay">
                       <div class="overlayContent"><div><button data-value="2" type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
-                        <div><a href="/Events/Amigo Robo.pdf"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
+                        <div><a href="/Events/Amigo Robo.pdf" target = "_blank"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
                         </div></div>
                     </div>
                     <div class="card-title">
@@ -307,7 +358,7 @@
                     <div class="overlay">
                       <div class="overlayContent"><div><button data-value="3" type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
-                        <div><a href="/Events/Blind Coding.pdf"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
+                        <div><a href="/Events/Blind Coding.pdf" target = "_blank"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
                         </div></div>
                     </div>
                     <div class="card-title">
@@ -324,14 +375,13 @@
             </div>
             <br><br>
             <div class="row">
-              
               <div class="col-sm-4">
                 <div class="card">
                   <div class="card-body">
                     <div class="overlay">
                       <div class="overlayContent"><div><button data-value="4" type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
-                        <div><a href="/Events/Bug Hunter.pdf"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
+                        <div><a href="/Events/Bug Hunter.pdf" target = "_blank"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
                         </div></div>
                     </div>
                     <div class="card-title">
@@ -351,7 +401,7 @@
                     <div class="overlay">
                       <div class="overlayContent"><div><button data-value="5" type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
-                        <div><a href="/Events/Build up.pdf"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
+                        <div><a href="/Events/Build up.pdf" target = "_blank"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
                         </div></div>
                     </div>
                     <div class="card-title">
@@ -371,7 +421,7 @@
                     <div class="overlay">
                       <div class="overlayContent"><div><button data-value="6" type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
-                        <div><a href="/Events/Capture the flag.pdf"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
+                        <div><a href="/Events/Capture the flag.pdf" target = "_blank"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
                         </div></div>
                     </div>
                     <div class="card-title">
@@ -394,7 +444,7 @@
                     <div class="overlay">
                       <div class="overlayContent"><div><button data-value="7" type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
-                        <div><a href="/Events/Causatum.pdf"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
+                        <div><a href="/Events/Causatum.pdf" target = "_blank"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
                         </div></div>
                     </div>
                     <div class="card-title">
@@ -414,7 +464,7 @@
                     <div class="overlay">
                       <div class="overlayContent"><div><button data-value="8" type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
-                        <div><a href="/Events/Circuitrix.pdf"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
+                        <div><a href="/Events/Circuitrix.pdf" target = "_blank"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
                         </div></div>
                     </div>
                     <div class="card-title">
@@ -434,7 +484,7 @@
                     <div class="overlay">
                       <div class="overlayContent"><div><button data-value="9" type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
-                        <div><a href="/Events/Clicks and Strokes.pdf"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
+                        <div><a href="/Events/Clicks and Strokes.pdf" target = "_blank"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
                         </div></div>
                     </div>
                     <div class="card-title">
@@ -457,7 +507,7 @@
                     <div class="overlay">
                       <div class="overlayContent"><div><button data-value="10" type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
-                        <div><a href="/Events/Creative design.pdf"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
+                        <div><a href="/Events/Creative design.pdf" target = "_blank"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
                         </div></div>
                     </div>
                     <div class="card-title">
@@ -477,7 +527,7 @@
                     <div class="overlay">
                       <div class="overlayContent"><div><button data-value="11" type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
-                        <div><a href="/Events/Execute.pdf"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
+                        <div><a href="/Events/Execute.pdf" target = "_blank"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
                         </div></div>
                     </div>
                     <div class="card-title">
@@ -497,7 +547,7 @@
                     <div class="overlay">
                       <div class="overlayContent"><div><button data-value="12" type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
-                        <div><a href="/Events/Green Saga.pdf"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
+                        <div><a href="/Events/Green Saga.pdf" target = "_blank"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
                         </div></div>
                     </div>
                     <div class="card-title">
@@ -521,7 +571,7 @@
                     <div class="overlay">
                       <div class="overlayContent"><div><button data-value="13" type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
-                        <div><a href="/Events/Hydrophilic 2.0.pdf"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
+                        <div><a href="/Events/Hydrophilic 2.0.pdf" target = "_blank"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
                         </div></div>
                     </div>
                     <div class="card-title">
@@ -541,7 +591,7 @@
                     <div class="overlay">
                       <div class="overlayContent"><div><button data-value="14" type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
-                        <div><a href="/Events/JPL.pdf"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
+                        <div><a href="/Events/JPL.pdf" target = "_blank"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
                         </div></div>
                     </div>
                     <div class="card-title">
@@ -560,7 +610,7 @@
                     <div class="overlay">
                       <div class="overlayContent"><div><button data-value="15" type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
-                        <div><a href="/Events/Masterpiece.pdf"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
+                        <div><a href="/Events/Masterpiece.pdf" target = "_blank"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
                         </div></div>
                     </div>
                     <div class="card-title">
@@ -582,7 +632,7 @@
                     <div class="overlay">
                       <div class="overlayContent"><div><button data-value="16" type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
-                        <div><a href="/Events/paper.pdf"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
+                        <div><a href="/Events/paper.pdf" target = "_blank"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
                         </div></div>
                     </div>
                     <div class="card-title">
@@ -601,7 +651,7 @@
                     <div class="overlay">
                       <div class="overlayContent"><div><button data-value="17" type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
-                        <div><a href="/Events/Project.pdf"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
+                        <div><a href="/Events/Project.pdf" target = "_blank"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
                         </div></div>
                     </div>
                     <div class="card-title">
@@ -618,30 +668,9 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="overlay">
-                      <div class="overlayContent"><div><button data-value="18" type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
-                        </div><br>
-                        <div><a href="/Events/Quizotronics.pdf"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
-                        </div></div>
-                    </div>
-                    <div class="card-title">
-                      Quizotronics
-                    </div>
-                    <p class="card-text">
-                      <br>
-                      Theme:  <br> The event will be a quiz based which will cover the questions from some of the core electronic subjects.
-                    <br></p>
-                  </div>
-                </div>
-              </div>
-          </div>
-          <div class="row">
-              <div class="col-sm-4">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="overlay">
                       <div class="overlayContent"><div><button data-value="19" type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
-                        <div><a href="/Events/socio.pdf"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
+                        <div><a href="/Events/socio.pdf" target = "_blank"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
                         </div></div>
                     </div>
                     <div class="card-title">
@@ -652,15 +681,17 @@
                       Theme:  <br> Extempore and Debate! The topics will be based on the social implications of technology.
                     <br></p>
                   </div>
-                </div>
+                </div>                
               </div>
+          </div>
+          <div class="row">
               <div class="col-sm-4">
                 <div class="card">
                   <div class="card-body">
                     <div class="overlay">
                       <div class="overlayContent"><div><button data-value="20" type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
-                        <div><a href="/Events/Start up summit.pdf"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
+                        <div><a href="/Events/Start up summit.pdf" target = "_blank"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
                         </div></div>
                     </div>
                     <div class="card-title">
@@ -679,7 +710,7 @@
                     <div class="overlay">
                       <div class="overlayContent"><div><button data-value="21" type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
-                        <div><a href="/Events/Startupedia'18.pdf"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
+                        <div><a href="/Events/Startupedia'18.pdf" target = "_blank"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
                         </div></div>
                     </div>
                     <div class="card-title">
@@ -692,34 +723,13 @@
                   </div>
                 </div>
               </div>
-          </div>
-          <div class="row">
-              <div class="col-sm-4">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="overlay">
-                      <div class="overlayContent"><div><button data-value="22" type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
-                        </div><br>
-                        <div><a href="/Events/Vizatim.pdf"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
-                        </div></div>
-                    </div>
-                    <div class="card-title">
-                      Vizatim
-                    </div>
-                    <p class="card-text">
-                      <br>
-                      Theme:  <br> Design a book cover using the material provided based on themes related to technology and environment
-                    <br></p>
-                  </div>
-                </div>
-              </div>
               <div class="col-sm-4">
                 <div class="card">
                   <div class="card-body">
                     <div class="overlay">
                       <div class="overlayContent"><div><button data-value="23" type="button" class="btn btn-outline register hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple; width: 100%;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Register</button>
                         </div><br>
-                        <div><a href="/Events/sherlock.pdf"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
+                        <div><a href="/Events/sherlock.pdf" target = "_blank"><button type="button" class="btn btn-outline hovercolor" style="background-color: #FC8B3F;color:purple; border: 2px solid purple;" onmouseenter="$(this).css('background-color', 'purple');$(this).css('color', 'white')" onmouseleave="$(this).css('background-color', '#FC8B3F');$(this).css('color', 'purple');">Description</button></a>
                         </div></div>
                     </div>
                     <div class="card-title">
@@ -829,14 +839,27 @@
           <div class="container">
             <h1>Please read below, before filling the form.</h1>
             <p class="lead">
-            The accommodation will be given in groups. The group which is registered below might be given accommodation together and needs to pay the fee together.</p>
+            The accommodation is free of cost for all the participants opting for it. This does not include food facility. Guests can purchase their meals from cafeteria, food stalls and mess of the college.</p>
             <p class="lead">
-              The accommodation charges do not include food facilities. Guest can purchase their meals from the food court, cafeteria or hostel messes.
+              If you registered for our accommodation, you will receive a confirmation mail within 24 hrs of your request.
             </p>
             <p class="lead">
-              You will receive a confirmation mail of payment within 24 hours. Mail your teamID, transaction ID, name, amount to <a href="mailto:info@cybersrishti.com">info@cybersrishti.com</a>, if no confirmation mail received. 
+              The confirmation will be given based on the registration of participants on our website for the event they wish to participate in.
             </p>
-            <form>
+            <p class="lead">
+             For further enquires, send us an email at <a href="mailto:info@cybersrishti.com">info@cybersrishti.com</a> 
+            </p>
+            <p class="lead">
+              Contact person:
+            </p>
+            <p class="lead">
+              Yash Goyal
+            </p>
+            <p class="lead">
+              +91-7065276461
+            </p>
+            <br><br>
+            <form id="accomodationForm">
               <br>
               <center>Fill this Form to Reach us!</center>
               <br>
@@ -968,7 +991,7 @@
                 </div>
                 <div class="col-sm-3">
                   <figure class="figure">
-                    <img src="../images/teams/srijan.png" class="figure-img rounded img-fluid" alt="Srijin Srivastava">
+                    <img src="../images/teams/srijan.png" class="figure-img rounded img-fluid">
                     <figcaption class="figure-caption figcaption"><h5>Srijan Srivastava<br>8700917364</h5></figcaption>
                   </figure>
                 </div>
@@ -1043,7 +1066,7 @@
               <div class="row">
                 <div class="col-sm-4 offset-sm-4">
                   <figure class="figure">
-                    <img src="../images/teams/parimal.jpg" class="figure-img rounded img-fluid" alt="Srijin Srivastava">
+                    <img src="../images/teams/parimal.jpg" class="figure-img rounded img-fluid">
                     <figcaption class="figure-caption figcaption"><h5>Parimal Mishra</h5></figcaption>
                   </figure>
                 </div>
@@ -1054,7 +1077,7 @@
                 <div class="col-sm-4 offset-sm-4">
                   <figure class="figure">
                     <img src="../images/teams/udbhav.jpg" class="figure-img rounded img-fluid" alt="Udbhav Gambhir">
-                    <figcaption class="figure-caption figcaption"><h5>Udbhav Gambhir<br><a href="http://www.ngudbhav.me">Website</a></h5></figcaption>
+                    <figcaption class="figure-caption figcaption"><h5>Udbhav Gambhir<br><a href="http://www.ngudbhav.me" target="_blank">Website</a></h5></figcaption>
                   </figure>
                 </div>
               </div>
@@ -1133,12 +1156,6 @@
           $("#timeShow").fadeIn('slow');
         }
       }
-      $('video').on('loadstart', function (event) {
-        $(this).addClass('loading');
-      });
-      $('#video_id').on('canplay', function (event) {
-        $(this).removeClass('loading');
-      });
       $(".btn-warning").hover(function(){
         $(this).css('background-color', 'white');
       });
@@ -1170,7 +1187,12 @@
       var charms = $("#el").data('charms');
       $("#galleryThumbnails>div>div>img").click(function(){
         var x = $(this).attr('data-value');
-        $(".carousel-inner>.carousel-item:eq("+(x-1)+")").addClass('active');
+        if(x > $(".carousel-inner>.carousel-item").length){
+          $(".carousel-inner>.carousel-item:eq(1)").addClass('active');
+        }
+        else{
+          $(".carousel-inner>.carousel-item:eq("+(x-1)+")").addClass('active');
+        }
         $("#galleryThumbnails").fadeOut('fast');
         $("#galleryCarousel").fadeIn('fast');
         charms.close();
@@ -1235,7 +1257,7 @@
         window.location.hash="";
         $("video").show();
         $("video").currentTime = 0;
-        /*$("video").play();*/
+        $("video")[0].play();
         $("#overlay").show();
       });
       $(".large>div").bind('click', function(){
@@ -1309,13 +1331,14 @@
           transition : 'transform 1s ease-in-out, opacity 1s'
         });
         $("#main").css('opacity', '0');
-      }, 3000);
+      }, 6000);
       setTimeout(function(){
         $(".preloader").css('display', 'none');
         $(".container-fluid").addClass('h-100');
         $("html,body").css('height', 'auto');
         $("body").css('overflow-y', 'hidden');
         $("#overlay").show();
+        $("video").show();
         if($(window).width()>=500){
         }
         $("#main-screen").css({
@@ -1326,8 +1349,8 @@
         var charms = $("#start").data('charms');
         charms.open();
         setTimeout(function(){$('[data-toggle="popover"]').popover();
-        $('[data-toggle="popover"]').popover('show');/*$("video").show();$("video")[0].play();*/}, 500);
-      }, 4500);
+        $('[data-toggle="popover"]').popover('show');/*$("video")[0].play();*/}, 500);
+      }, 7500);
       $(".register").click(function(){
         $('#eventRegister').modal('show');
       });
@@ -1349,6 +1372,27 @@
         var data = {
           id:$(this).attr('data-value')
         }
+        console.log(formid);
+        if(formid == 3 || formid ==  9 || formid ==  16 || formid ==  19){//MAx participation is 1
+          $("#numberSelect").siblings("ul").children("li:eq(2)").hide();
+          $("#numberSelect").siblings("ul").children("li:eq(3)").hide();
+          $("#numberSelect").siblings("ul").children("li:eq(4)").hide();
+        }
+        else if(formid==4 || formid==10 || formid==12 || formid==13 || formid==14){//MAX participation is 2
+          $("#numberSelect").siblings("ul").children("li:eq(2)").show();
+          $("#numberSelect").siblings("ul").children("li:eq(3)").hide();
+          $("#numberSelect").siblings("ul").children("li:eq(4)").hide();
+        }
+        else if(formid== 6||formid== 8||formid==11 || formid==15 || formid==20 || formid==21 || formid==23){
+          $("#numberSelect").siblings("ul").children("li:eq(2)").show();
+          $("#numberSelect").siblings("ul").children("li:eq(3)").show();
+          $("#numberSelect").siblings("ul").children("li:eq(4)").hide();
+        }
+        else{
+          $("#numberSelect").siblings("ul").children("li:eq(2)").show();
+          $("#numberSelect").siblings("ul").children("li:eq(3)").show();
+          $("#numberSelect").siblings("ul").children("li:eq(4)").show();
+        }
         $.ajax({
           url: '/getForm',
           type: 'GET',
@@ -1369,20 +1413,15 @@
           type: 'GET',
           data: data,
           success: function(e){
-            console.log(e);
-            if(e!=undefined){
+            if(e.length!==0){
               $("#onname").val(e[0].name);
               $("#onemail").val(e[0].email);
               $("#onphone").val(e[0].phone);
-              $("#collegeSelect").val(e[0].isJIIT).change();
-              $("#yearSelect").val(e[0].year).change();
             }
             else{
               $("#onname").val('');
               $("#onemail").val('');
               $("#onphone").val('');
-              $("#collegeSelect").val('').change();
-              $("#yearSelect").val('').change();
             }
           }
         });
@@ -1404,25 +1443,54 @@
           fourth: $("#fenroll").val(),
           whichForm: formid
         };
-        $.ajax({
-          url: '/registration',
-          type: 'GET',
-          data: data,
-          success: function(e){
-            console.log(e);
-            if(e=="0"){
-              alert("There was an error! Please Check your Connection!");
-            }
-            else if(e=="3"){
-              alert("Your Team is already registered with us! Please Check Your mail if you want to know your TeamID. If you did not recieve any mail, this is likely a server issue. Please Contact us and we will help you out.");
-            }
-            else {
-              alert('Success! Your Team ID is '+ e);
-            }
-          }
-        }).fail(function(e) {
-          console.log("error  " + e);
-        });
+        var count = 0;
+        if(data['participants'] == 1){
+        	if(data['name'] !== '' && data['email'] !== ''  && data['phone'] !== ''){
+        		count = 1;
+        	}
+        }
+        if(data['participants'] == 2){
+        	if(data['name'] !== '' && data['email'] !== ''  && data['phone'] !== '' && data['second'] !== ''){
+        		count = 1;
+        	}
+        }
+        if(data['participants'] == 3){
+        	if(data['name'] !== '' && data['email'] !== ''  && data['phone'] !== '' && data['second'] !== '' && data['third'] !== ''){
+        		count = 1;
+        	}
+        }
+        if(data['participants'] == 4){
+        	if(data['name'] !== '' && data['email'] !== ''  && data['phone'] !== '' && data['second'] !== '' && data['third'] !== '' && data['fourth'] !== ''){
+        		count = 1;
+        	}
+        }
+        console.log(count);
+        if(count === 1){
+        	$.ajax({
+          		url: '/registration',
+          		type: 'GET',
+          		data: data,
+          		success: function(e){
+                console.log(e);
+            		if(e=="0"){
+              			alert("There was an error! Please Check your Connection!");
+            		}
+            		else if(e=="3"){
+              			alert("Your Team is already registered with us! Please Check Your mail if you want to know your TeamID. If you did not recieve any mail, this is likely a server issue. Please Contact us and we will help you out.");
+              			$("#eventRegisteration")[0].reset();
+            		}
+            		else {
+              			alert('Success! Your Team ID is '+ e);
+             	 		$("#eventRegisteration")[0].reset();
+            		}
+          		}
+        	}).fail(function(e) {
+            alert('error' + JSON.stringify(e));
+        	});
+    	}
+    	else{
+    		alert("You need to fill all the details");
+    	}
       });
       $("#contactmail").submit(function(e) {
         e.preventDefault();
@@ -1436,17 +1504,51 @@
         type: 'GET',
         data: data,
         success: function(r){
-          if(r === "1"){
-            console.log('Success');
+          if(r == "1"){
+            alert('Success! Our team will reach you very soon!');
+            $("#contactmail")[0].reset();
+          }
+          else{
+            alert('Failed');
           }
         }
       }).fail(function(r) {
           console.log("error");
         }); 
       });
+      $("#accomodationForm").submit(function(e){
+        e.preventDefault();
+        var data = {
+          name: $("input[name='aname']").val(),
+          email: $("input[name='aemail']").val(),
+          phone: $("input[name='aphone']").val(),
+          college: $("input[name='acollege']").val(),
+          address: $("input[name='address']").val()
+        };
+        $.ajax({
+          url: '/accomodation',
+          type: 'GET',
+          data: data,
+          success: function(e){
+            if(e=="0"){
+              alert('There is an internal server error and your request could not be processed. Please try using the feedback form for the same.');
+            }
+            else if(e == "1"){
+              alert('Success! Your form has been submitted!');
+              $("#accomodationForm")[0].reset();
+            }
+            else{
+              alert('It appears that the phone number is already registered with us.');
+            }
+
+          }
+        }).fail(function() {
+          alert('There is an internal server error and your request could not be processed. Please try using the feedback form for the same.');
+        });
+      });
     </script>
     <script type="text/javascript">
-      var countDownDate = new Date("Apr 21, 2018 00:00:00").getTime();
+      var countDownDate = new Date("Apr 21, 2018 01:00:00").getTime();
       var count = 0;
       var x = setInterval(function(){
         var now = new Date().getTime();
@@ -1461,15 +1563,17 @@
         $("#seconds").html(seconds + "s");
         if(distance<0){
           clearInterval(x);
-          $(".overlay").html('We are finally here!');
-        }
-        if(count === 0){
-          $(".colon").html(':');
-          count = 1;
+          $("#overlay").html('<center>Cybersrishti is here! Participate in various events!</center>');
         }
         else{
-          $(".colon").html(' ');
-          count = 0;
+          if(count === 0){
+            $(".colon").html(':');
+            count = 1;
+          }
+          else{
+            $(".colon").html(' ');
+            count = 0;
+          }
         }
       }, 1000);
     </script>
